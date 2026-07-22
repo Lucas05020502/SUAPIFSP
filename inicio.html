@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://suap.ifsp.edu.br/ -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Início - SUAP: Sistema Unificado de Administração Pública</title>
+    
+    <meta name="keywords" content="suap, administração, pública, mec, ifrn">
+    <meta content="SUAP: Sistema Unificado de Administração Pública" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="NONE,NOARCHIVE">
+
+    
+    <link rel="shortcut icon" href="https://suap.ifsp.edu.br/static/comum/img/favicon.png">
+
+    
+    
+      
+        <link href="./inicio_files/main_default.css" rel="stylesheet" type="text/css" media="all">
+      
+    
+    
+
+    
+    <script type="text/javascript" src="./inicio_files/jquery.min.js.download" charset="utf-8"></script>
+
+    
+    <script src="./inicio_files/tinybox.js.download"></script>
+
+    
+    <script src="./inicio_files/jquery.ui.custom.min.js.download"></script>
+    <script type="text/javascript" src="./inicio_files/jquery.ui.datepicker-pt-BR.js.download" charset="utf-8"></script>
+    <script type="text/javascript" src="./inicio_files/main.js.download" charset="utf-8"></script>
+
+    <script type="text/javascript" src="./inicio_files/select2.js.download" charset="utf-8"></script>
+    <link href="./inicio_files/select2.min.css" rel="stylesheet" type="text/css" media="all">
+
+    
+    <script type="text/javascript" src="./inicio_files/nouislider.min.js.download" charset="utf-8"></script>
+
+    <script>
+      jQuery(document).ready(function() {
+        initAll();
+        initMenu();
+
+        /*https://stackoverflow.com/questions/42111784/how-user-will-logout-from-all-open-tabs-automatically-when-user-logs-out-in-one/42181190#42181190*/
+        window.addEventListener('storage', function(event){
+          if (event.key == 'logout-event') {
+            window.location.replace("/accounts/logout/");
+          }
+        });
+        $( ".menu-logout" ).click(function() {
+          localStorage.setItem('logout-event', 'logout' + Math.random());
+        });
+
+        /* Menu principal: Para dispositivos moveis */
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          jQuery("body").addClass("hideSidebar");
+        }
+
+        
+          $("html").ready(function(event) {
+
+            $.ajax({
+              type: "GET",
+              url: "/comum/qtd_notificacoes_nao_lidas/",
+              success: function(response) {
+                if(parseInt(response, 10) > 99){
+                  $("#counter_notificacoes").append("<span class='counter'>99+</span>");
+                }
+                if(parseInt(response, 10) > 0){
+                  $("#counter_notificacoes").append("<span class='counter'>"+response+"</span>");
+                }
+              }
+            });
+          });
+        
+
+      });
+    </script>
+    
+
+    
+
+    
+  <script type="text/javascript" src="./inicio_files/highcharts.js.download" charset="utf-8"></script>
+  <script type="text/javascript" src="./inicio_files/exporting.js.download" charset="utf-8"></script>
+  <script>
+    $(function() {
+      $(".coluna").sortable({
+        connectWith: ".coluna",
+        handle: ".portlet-header",
+        cancel: ".portlet-toggle",
+        placeholder: "portlet-placeholder ui-corner-all",
+        beforeStop: function( event, ui ) {
+          item = ui.item[0];
+          coluna = '3';
+          cont_item = $(item).prevAll().length;
+
+          if ($(item.parentElement).hasClass('coluna-esquerda')) {
+            coluna = '1';
+          } else {
+            if ($(item.parentElement).hasClass('coluna-centro')) {
+              coluna = '2';
+            }
+          }
+
+          $.ajax({
+            type: "POST",
+            url: "/comum/index/layout/",
+            data: {titulo: $(item).find('.portlet-header').find('.titulo')[0].getAttribute("data-quadro"), coluna: coluna, ordem: cont_item}
+          });
+        }
+      });
+      $(".esconder-quadro").click(function(){
+        $.ajax({
+          type: "POST",
+          url: "/comum/index/esconder_quadro/",
+          data: {titulo: $(this).data('quadro')}
+        });
+        $(this).parent().parent().hide();
+      });
+    });
+  </script>
+
+    
+  <style>                      .htmx-indicator{opacity:0;transition: opacity 200ms ease-in;}                      .htmx-request .htmx-indicator{opacity:1}                      .htmx-request.htmx-indicator{opacity:1}                    </style></head>
+
+  <body hx-headers="{&quot;X-CSRFToken&quot;: &quot;81heE86akei5wg0LqDqD1NtCZwkQNRa1XboOEXhfgqHxuGpVhBTrlPbHx3XCSKcc&quot;}" hx-indicator="#loadIndicator" class=" index with-quick-access" data-suap-theme="padrao" data-suap-contrast="normal">
+
+
+    
+    
+
+    
+    
+
+    
+  
+
+
+    <div class="holder">
+      <div id="loadIndicator" class="htmx-indicator">
+        <img src="./inicio_files/loadbar.svg">
+      </div>
+      
+        <a href="https://suap.ifsp.edu.br/#" class="toggleSidebar"><span class="fas fa-chevron-left" aria-hidden="true"></span> <span class="sr-only">Mostrar/Esconder barra lateral</span></a>
+        <aside class="nav">
+          <header>
+            <h1><a href="https://suap.ifsp.edu.br/" title="SUAP: Sistema Unificado de Administração Pública">SUAP</a></h1>
+
+            
+             
+            
+
+            
+              
+                <div id="user-tools">
+                  
+                    <a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/">
+                      <div class="photo-circle small">
+                        <img src="./inicio_files/Mgj7d02GoqzDoRq_8cJLz7Cirx87nAGkVtSeDGYCODM.jpg" alt="Lucas Souza">
+                      </div>
+                      <span>Lucas Souza</span>
+                    </a>
+                  
+                </div>
+              
+            
+          </header>
+          
+            
+              <form id="__buscar_menu__" action="https://suap.ifsp.edu.br/" onsubmit="return false;" class="buscar_menu">
+                <input type="search" placeholder="Buscar Item de Menu" id="__filterinput__" autofocus="">
+              </form>
+
+              
+                <nav>
+                  <ul class="_main_menu">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos"><a href="https://suap.ifsp.edu.br/#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino"><a href="https://suap.ifsp.edu.br/#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa"><a href="https://suap.ifsp.edu.br/#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Projetos"> <span>Projetos</span></a><ul><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Editora"> <span>Editora</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas"><a href="https://suap.ifsp.edu.br/#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao"><a href="https://suap.ifsp.edu.br/#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Notificações"> <span>Notificações</span></a><ul><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos"><a href="https://suap.ifsp.edu.br/#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis"><a href="https://suap.ifsp.edu.br/#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Serviço Social"> <span>Serviço Social</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Programas"> <span>Programas</span></a><ul><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social"><a href="https://suap.ifsp.edu.br/#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Relatórios"> <span>Relatórios</span></a><ul><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Comunicador"> <span>Comunicador</span></a><ul><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao"><a href="https://suap.ifsp.edu.br/#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Egressos"> <span>Egressos</span></a><ul><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional"><a href="https://suap.ifsp.edu.br/#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/#" title="Assuntos"> <span>Assuntos</span></a><ul><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="81heE86akei5wg0LqDqD1NtCZwkQNRa1XboOEXhfgqHxuGpVhBTrlPbHx3XCSKcc">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul>
+                <ul class="" id="_menu_list_expanded" style="display: none;">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos opened"><a href="https://suap.ifsp.edu.br/#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino opened"><a href="https://suap.ifsp.edu.br/#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa opened"><a href="https://suap.ifsp.edu.br/#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Projetos"> <span>Projetos</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Editora"> <span>Editora</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas opened"><a href="https://suap.ifsp.edu.br/#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul style="display: block;"><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao opened"><a href="https://suap.ifsp.edu.br/#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Notificações"> <span>Notificações</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos opened"><a href="https://suap.ifsp.edu.br/#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul style="display: block;"><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis opened"><a href="https://suap.ifsp.edu.br/#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Serviço Social"> <span>Serviço Social</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Programas"> <span>Programas</span></a><ul style="display: block;"><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social opened"><a href="https://suap.ifsp.edu.br/#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Relatórios"> <span>Relatórios</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Comunicador"> <span>Comunicador</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao opened"><a href="https://suap.ifsp.edu.br/#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Egressos"> <span>Egressos</span></a><ul style="display: block;"><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional opened"><a href="https://suap.ifsp.edu.br/#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/#" title="Assuntos"> <span>Assuntos</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="81heE86akei5wg0LqDqD1NtCZwkQNRa1XboOEXhfgqHxuGpVhBTrlPbHx3XCSKcc" style="display: inline-block;">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul></nav>
+              
+            
+          
+        </aside>
+      
+
+      
+  <div class="alertas">
+    
+    
+    
+    
+    <div>
+  <h3><i class="fa fa-rss" aria-hidden="true"></i> Notícias <span>Portal do IFSP</span></h3>
+  Campus:
+  <select id="rss-portal">
+    <option value="0" selected="selected">Selecione o Campus</option>
+    
+      
+        
+          <option value="13" data-url="http://arq.ifsp.edu.br/" data-facebook="190284764340200">ARQ</option>
+        
+
+      
+    
+      
+        
+          <option value="8" data-url="https://bra.ifsp.edu.br/">BRA</option>
+        
+
+      
+    
+      
+        
+          <option value="15" data-url="http://bri.ifsp.edu.br/" data-facebook="256279404484571">BRI</option>
+        
+
+      
+    
+      
+        
+          <option value="14" data-url="http://brt.ifsp.edu.br/" data-facebook="1134323643287699">BRT</option>
+        
+
+      
+    
+      
+        
+          <option value="50" data-url="https://bru.ifsp.edu.br/">BRU</option>
+        
+
+      
+    
+      
+        
+          <option value="17" data-url="http://btv.ifsp.edu.br/" data-facebook="236973219742872">BTV</option>
+        
+
+      
+    
+      
+        
+          <option value="6" data-url="https://www.ifspcaraguatatuba.edu.br/" data-facebook="191644980877972">CAR</option>
+        
+
+      
+    
+      
+        
+          <option value="3" selected="selected" data-url="http://cbt.ifsp.edu.br/" data-facebook="215741898510977">CBT</option>
+        
+      
+    
+      
+        
+          <option value="29" data-url="https://cmp.ifsp.edu.br/" data-facebook="577348598954504">CMP</option>
+        
+
+      
+    
+      
+        
+          <option value="16" data-url="https://cpv.ifsp.edu.br/" data-facebook="336096856472273">CPV</option>
+        
+
+      
+    
+      
+        
+          <option value="18" data-url="http://ctd.ifsp.edu.br/portal/" data-facebook="180212095390007">CTD</option>
+        
+
+      
+    
+      
+        
+          <option value="37" data-url="">FDS</option>
+        
+
+      
+    
+      
+        
+          <option value="5" data-url="http://portal.ifspguarulhos.edu.br/" data-facebook="234919816694136">GRU</option>
+        
+
+      
+    
+      
+        
+          <option value="25" data-url="http://hto.ifsp.edu.br/" data-facebook="443473282342984">HTO</option>
+        
+
+      
+    
+      
+        
+          <option value="38" data-url="http://ist.ifsp.edu.br/site/" data-facebook="466341076837390">IST</option>
+        
+
+      
+    
+      
+        
+          <option value="19" data-url="http://itp.ifsp.edu.br/" data-facebook="183519425139089">ITP</option>
+        
+
+      
+    
+      
+        
+          <option value="42" data-url="https://itq.ifsp.edu.br/" data-facebook="1105028332919246">ITQ</option>
+        
+
+      
+    
+      
+        
+          <option value="47" data-url="http://jcr.ifsp.edu.br/" data-facebook="239153976282112">JCR</option>
+        
+
+      
+    
+      
+        
+          <option value="40" data-url="">LMR</option>
+        
+
+      
+    
+      
+        
+          <option value="20" data-url="http://mto.ifsp.edu.br/" data-facebook="473258192806506">MTO</option>
+        
+
+      
+    
+      
+        
+          <option value="26" data-url="http://pep.ifsp.edu.br/" data-facebook="244097169025219">PEP</option>
+        
+
+      
+    
+      
+        
+          <option value="41" data-url="">PNG</option>
+        
+
+      
+    
+      
+        
+          <option value="21" data-url="http://prc.ifsp.edu.br/" data-facebook="165743190559886">PRC</option>
+        
+
+      
+    
+      
+        
+          <option value="45" data-url="https://pru.ifsp.edu.br/" data-facebook="268890473309008">PRU</option>
+        
+
+      
+    
+      
+        
+          <option value="43" data-url="https://ptb.ifsp.edu.br/" data-facebook="1071109406290299">PTB</option>
+        
+
+      
+    
+      
+        
+          <option value="22" data-url="http://rgt.ifsp.edu.br/" data-facebook="284189595015605">RGT</option>
+        
+
+      
+    
+      
+        
+          <option value="7" data-url="https://sbv.ifsp.edu.br/" data-facebook="233120346704166">SBV</option>
+        
+
+      
+    
+      
+        
+          <option value="11" data-url="https://scl.ifsp.edu.br/">SCL</option>
+        
+
+      
+    
+      
+        
+          <option value="28" data-url="https://sjc.ifsp.edu.br/" data-facebook="933378273349339">SJC</option>
+        
+
+      
+    
+      
+        
+          <option value="48" data-url="https://sjp.ifsp.edu.br/" data-facebook="ifspriopreto">SJP</option>
+        
+
+      
+    
+      
+        
+          <option value="9" data-url="http://slt.ifsp.edu.br/" data-facebook="236618239747702">SLT</option>
+        
+
+      
+    
+      
+        
+          <option value="33" data-url="http://smp.ifsp.edu.br/" data-facebook="874860002620494">SMP</option>
+        
+
+      
+    
+      
+        
+          <option value="31" data-url="http://sor.ifsp.edu.br/" data-facebook="603409993062973">SOR</option>
+        
+
+      
+    
+      
+        
+          <option value="2" data-url="https://spo.ifsp.edu.br/">SPO</option>
+        
+
+      
+    
+      
+        
+          <option value="10" data-url="http://srq.ifsp.edu.br/" data-facebook="379548745489718">SRQ</option>
+        
+
+      
+    
+      
+        
+          <option value="4" data-url="http://srt.ifsp.edu.br/" data-facebook="811206545597171">SRT</option>
+        
+
+      
+    
+      
+        
+          <option value="44" data-url="http://tup.ifsp.edu.br/" data-facebook="791034720966279">TUP</option>
+        
+
+      
+    
+      
+        
+          <option value="27" data-url="http://vtp.ifsp.edu.br/" data-facebook="548261211851944">VTP</option>
+        
+
+      
+    
+      
+        
+          <option value="49" data-url="https://ead.ifsp.edu.br" data-facebook="109698005807241">EAD</option>
+        
+
+      
+    
+      
+        
+          <option value="1" data-url="http://www.ifsp.edu.br/" data-facebook="168422796521427">RET</option>
+        
+
+      
+    
+  </select>
+</div>
+
+<div class="modulo modulo-alertas">
+  <div id="modulo-rss"><ul class="info">
+  
+    <li>
+      <a href="https://cbt.ifsp.edu.br/index.php/noticias/4665-campus-cubatao-abre-inscricoes-para-curso-gratuito-de-auxiliar-de-servicos-diversos" target="_blank"><span>22 de Julho de 2026</span> Campus Cubatão abre inscrições para curso gratuito de Auxiliar de Serviços Diversos</a>
+    </li>
+  
+    <li>
+      <a href="https://cbt.ifsp.edu.br/index.php/noticias/4662-coordenadoria-sociopedagogica-convida-estudantes-para-assembleia-da-assistencia-estudantil-2026" target="_blank"><span>15 de Julho de 2026</span> Coordenadoria Sociopedagógica convida estudantes para assembleia da Assistência Estudantil 2026</a>
+    </li>
+  
+    <li>
+      <a href="https://cbt.ifsp.edu.br/index.php/noticias/4664-bancas-de-tcc-de-ads-destacam-inovacao-acessibilidade-e-impacto-social-no-iii-simcads" target="_blank"><span>16 de Julho de 2026</span> Bancas de TCC de ADS destacam inovação, acessibilidade e impacto social no III SIMCADS</a>
+    </li>
+  
+    <li>
+      <a href="https://cbt.ifsp.edu.br/index.php/noticias/4661-rematriculas-para-o-2-semestre-de-2026-tem-prazos-definidos-no-campus-cubatao" target="_blank"><span>15 de Julho de 2026</span> Rematrículas para o 2º semestre de 2026 têm prazos definidos no Campus Cubatão</a>
+    </li>
+  
+    <li>
+      <a href="https://cbt.ifsp.edu.br/index.php/noticias/4660-coordenadoria-de-estagio-altera-horario-de-atendimento-durante-o-periodo-de-ferias" target="_blank"><span>13 de Julho de 2026</span> Coordenadoria de Estágio altera horário de atendimento durante o período de férias</a>
+    </li>
+  
+</ul></div>
+</div>
+
+<div id="modulo-facebook" class="float-right"><a href="https://pt-br.facebook.com/215741898510977" target="__blank" id="url-facebook"><img src="./inicio_files/icon-facebook.png"></a></div>
+
+<a href="http://cbt.ifsp.edu.br/" id="url-portal" target="_blank" class="btn default">Mais...</a>
+
+<script>
+  function carrega_feed(campi_id,url_campi,url_facebook){
+    $('#modulo-rss').html('<span>Carregando notícias...</span>');
+
+    $.ajax({
+      url: "/comum/feed_noticias/"+campi_id,
+      success: function(data) {
+        // Carrega o RSS na pagina
+        $('#modulo-rss').html(data);
+
+        // Adiciona target blank para todos os links do rss
+        $('#modulo-rss a').attr('target','_blank');
+
+        if (campi_id != null) {
+          if(url_campi != null){
+            $('#url-portal').attr('href',url_campi);
+          }else {
+            $('#url-portal').attr('href', 'http://www.ifsp.edu.br');
+          }
+
+          var html = "";
+          if(url_facebook != null){
+            html = "<a href='https://pt-br.facebook.com/"+url_facebook+"' target='__blank' id='url-facebook'><img src='/static/comum/img/icon-facebook.png'></a>";
+          }
+          $('#modulo-facebook').html(html);
+        } else {
+          $('#url-portal').attr('href',"http://www.ifsp.edu.br");
+        }
+      },
+      error: function() {
+        $('#modulo-rss').html('<span>Erro ao carregar RSS</span>');
+      },
+      dataType: "html"
+    });
+  }
+  $('#rss-portal').on('change',function(){
+    var campi_id = this.value;
+    var campi_url = $(this).find(':selected').data('url');
+    var facebook_url = $(this).find(':selected').data('facebook');
+    carrega_feed(campi_id,campi_url,facebook_url);
+  });
+  $(document).ready(function(){
+    campi_id = $('#rss-portal').val();
+    var facebook_url = $(this).find(':selected').data('facebook');
+    var campi_url = $(this).find(':selected').data('url');
+    carrega_feed(campi_id, campi_url, facebook_url);
+  });
+</script>
+  </div>
+
+
+      <main id="content">
+
+        <div id="breadcrumbs">
+          
+            <a href="https://suap.ifsp.edu.br/">Início</a>
+          
+        </div>
+
+        
+
+        
+
+  <div class="container">
+
+    <div class="secao secao100">
+
+      
+        <div class="flex-container">
+          
+            <div class="flex-container coluna coluna-esquerda ui-sortable">
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="ENSINO"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Ensino</span>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="file:///C:/Users/lms49/Desktop/DATABASE/BOLETIM.html" class="default"><i class="fas fa-link" aria-hidden="true"></i> Meus Dados</a></li>
+        
+          <li><a href="file:///C:/Users/lms49/Desktop/DATABASE/AGENDAAVA.html" class="default"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Agenda de Avaliações</a></li>
+        
+          <li><a href="file:///C:/Users/lms49/Desktop/DATABASE/HORARIOS.html" class="default"><i class="fas fa-link" aria-hidden="true"></i> Locais e Horários de Aula</a></li>
+        
+          <li><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=requerimentos" class="default"><i class="fas fa-link" aria-hidden="true"></i> Meus Requerimentos</a></li>
+        
+          <li><a href="https://suap.ifsp.edu.br/edu/salas_virtuais/" class="default"><i class="fas fa-link" aria-hidden="true"></i> Turmas Virtuais</a></li>
+        
+          <li><a href="https://suap.ifsp.edu.br/email_usuario/redefinir_senha_email/lucas.mauricio@aluno.ifsp.edu.br" class="default"><i class="fas fa-link" aria-hidden="true"></i> Redefinir Senha do E-Mail Acadêmico</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="CALENDÁRIO ACADÊMICO"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Calendário Acadêmico</span>
+    
+      <a class="esconder-quadro" href="https://suap.ifsp.edu.br/#" data-quadro="CALENDÁRIO ACADÊMICO" title="Esconder quadro: Calendário Acadêmico">
+        <span class="fas fa-times" aria-hidden="true"></span>
+        <span class="sr-only">Esconder quadro</span>
+      </a>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+      
+        <div class="calendario">
+<table class="calendario-dias">
+<caption>Julho/2026</caption>
+<thead>
+<tr>
+<th id="calendario-domingo">Dom</th>
+<th id="calendario-segunda">Seg</th>
+<th id="calendario-terca">Ter</th>
+<th id="calendario-quarta">Qua</th>
+<th id="calendario-quinta">Qui</th>
+<th id="calendario-sexta">Sex</th>
+<th id="calendario-sabado">Sab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="" title="" headers="calendario-domingo"><span>&nbsp;</span></td><td class="" title="" headers="calendario-segunda"><span>&nbsp;</span></td><td class="" title="" headers="calendario-terca"><span>&nbsp;</span></td><td class="fds" title="" headers="calendario-quarta"><span>1</span></td><td class="fds" title="" headers="calendario-quinta"><span>2</span></td><td class="fds" title="" headers="calendario-sexta"><span>3</span></td><td class="fds" title="" headers="calendario-sabado"><span>4</span></td>
+</tr><tr>
+<td class="fds" title="" headers="calendario-domingo"><span>5</span></td><td class="fds" title="" headers="calendario-segunda"><span>6</span></td><td class="fds" title="" headers="calendario-terca"><span>7</span></td><td class="fds" title="" headers="calendario-quarta"><span>8</span></td><td class="fds" title="" headers="calendario-quinta"><span>9</span></td><td class="fds" title="" headers="calendario-sexta"><span>10</span></td><td class="fds" title="" headers="calendario-sabado"><span>11</span></td>
+</tr><tr>
+<td class="fds" title="" headers="calendario-domingo"><span>12</span></td><td class="fds" title="" headers="calendario-segunda"><span>13</span></td><td class="fds" title="" headers="calendario-terca"><span>14</span></td><td class="fds" title="" headers="calendario-quarta"><span>15</span></td><td class="fds" title="" headers="calendario-quinta"><span>16</span></td><td class="fds" title="" headers="calendario-sexta"><span>17</span></td><td class="fds" title="" headers="calendario-sabado"><span>18</span></td>
+</tr><tr>
+<td class="fds" title="" headers="calendario-domingo"><span>19</span></td><td class="fds" title="" headers="calendario-segunda"><span>20</span></td><td class="fds" title="" headers="calendario-terca"><span>21</span></td><td class="hoje fds" title="" headers="calendario-quarta"><span>22</span></td><td class="fds" title="" headers="calendario-quinta"><span>23</span></td><td class="fds" title="" headers="calendario-sexta"><span>24</span></td><td class="fds" title="" headers="calendario-sabado"><span>25</span></td>
+</tr><tr>
+<td class="fds" title="" headers="calendario-domingo"><span>26</span></td><td class="fds" title="" headers="calendario-segunda"><span>27</span></td><td class="fds" title="" headers="calendario-terca"><span>28</span></td><td class="fds" title="" headers="calendario-quarta"><span>29</span></td><td class="success" title=" | " headers="calendario-quinta"><span>30</span></td><td class="success" title=" | " headers="calendario-sexta"><span>31</span></td><td class="" title="" headers="calendario-sabado"><span>&nbsp;</span></td>
+</tr></tbody></table><ul class="calendario-referencia">
+<li class="success">De 30/7 a 15/12: 1ª Etapa</li>
+<li class="">De 30/7 a 28/9: Período para Trancamento</li>
+</ul></div>
+        
+      
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="https://suap.ifsp.edu.br/edu/calendarioacademico/6688/" class="default"><i class="fas fa-link" aria-hidden="true"></i> Acessar Calendário Completo</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="CENTRAL DE SERVIÇOS"><i class="fas fa-list" aria-hidden="true"></i> Central de Serviços</span>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="https://suap.ifsp.edu.br/centralservicos/meus_chamados/?tab=ativos" class="default"><i class="fas fa-bars" aria-hidden="true"></i> Meus Chamados</a></li>
+        
+          <li><a href="https://suap.ifsp.edu.br/centralservicos/listar_area_servico/" class="success"><i class="fas fa-plus" aria-hidden="true"></i> Abrir Chamado</a></li>
+        
+          <li><a href="https://suap.ifsp.edu.br/centralservicos/baseconhecimento/" class="default"><i class="fas fa-question" aria-hidden="true"></i> Base de Conhecimentos</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="SERVIÇO SOCIAL"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Serviço Social</span>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="https://suap.ifsp.edu.br/admin/ae/inscricao/" class="default"><i class="fas fa-bars" aria-hidden="true"></i> Minhas Inscrições em Editais</a></li>
+        
+          <li><a href="https://suap.ifsp.edu.br/admin/ae/recursoatividadesestudantis/" class="default"><i class="fas fa-bars" aria-hidden="true"></i> Meus Recursos</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="BANNER"><i class="fas fa-users" aria-hidden="true"></i> Julho amarelo</span>
+    
+      <a class="esconder-quadro" href="https://suap.ifsp.edu.br/#" data-quadro="BANNER" title="Esconder quadro: Julho amarelo">
+        <span class="fas fa-times" aria-hidden="true"></span>
+        <span class="sr-only">Esconder quadro</span>
+      </a>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+      
+        
+        <img src="./inicio_files/Campanha_Julho_amarelo.gif" alt="Julho amarelo">
+        
+      
+    
+    
+    
+    
+    
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="PROCESSOS ELETRÔNICOS"><i class="fas fa-file" aria-hidden="true"></i> Processos Eletrônicos</span>
+    
+  </h3>
+  <div class="wrapper">
+    
+      
+        <form action="https://suap.ifsp.edu.br/processo_eletronico/busca_processo/" method="GET" class="form-busca-rapida">
+          <h4>Busca Rápida:</h4>
+          <input type="search" name="q" placeholder="Processo Eletrônico">
+          
+        </form>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="https://suap.ifsp.edu.br/admin/processo_eletronico/processo/" class="default"><i class="fas fa-bars" aria-hidden="true"></i> Todos os Processos</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="CALENDÁRIO DE EVENTOS"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Calendário de Eventos</span>
+    
+      <a class="esconder-quadro" href="https://suap.ifsp.edu.br/#" data-quadro="CALENDÁRIO DE EVENTOS" title="Esconder quadro: Calendário de Eventos">
+        <span class="fas fa-times" aria-hidden="true"></span>
+        <span class="sr-only">Esconder quadro</span>
+      </a>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+      
+        <div class="calendario">
+<table class="calendario-dias">
+<caption>Julho</caption>
+<thead>
+<tr>
+<th id="calendario-domingo">Dom</th>
+<th id="calendario-segunda">Seg</th>
+<th id="calendario-terca">Ter</th>
+<th id="calendario-quarta">Qua</th>
+<th id="calendario-quinta">Qui</th>
+<th id="calendario-sexta">Sex</th>
+<th id="calendario-sabado">Sab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="" title="" headers="calendario-domingo"><span>&nbsp;</span></td><td class="" title="" headers="calendario-segunda"><span>&nbsp;</span></td><td class="" title="" headers="calendario-terca"><span>&nbsp;</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |   |  |   |  |  |  |  |   |  |  |  |     |    |   | " headers="calendario-quarta"><span>1</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  |  |  |  |  |  |  | " headers="calendario-quinta"><span>2</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  |  |  |  |  | " headers="calendario-sexta"><span>3</span></td><td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  |  |  | " headers="calendario-sabado"><span>4</span></td>
+</tr><tr>
+<td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  |  |  | " headers="calendario-domingo"><span>5</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  |  | " headers="calendario-segunda"><span>6</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  | " headers="calendario-terca"><span>7</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  |  | " headers="calendario-quarta"><span>8</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quinta"><span>9</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sexta"><span>10</span></td><td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sabado"><span>11</span></td>
+</tr><tr>
+<td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-domingo"><span>12</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-segunda"><span>13</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-terca"><span>14</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quarta"><span>15</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quinta"><span>16</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sexta"><span>17</span></td><td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sabado"><span>18</span></td>
+</tr><tr>
+<td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-domingo"><span>19</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-segunda"><span>20</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-terca"><span>21</span></td><td class="hoje info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quarta"><span>22</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quinta"><span>23</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sexta"><span>24</span></td><td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sabado"><span>25</span></td>
+</tr><tr>
+<td class="fds info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-domingo"><span>26</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-segunda"><span>27</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-terca"><span>28</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quarta"><span>29</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-quinta"><span>30</span></td><td class="info info_conflito_leve info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios info_conflito_varios" title=" |  |  |  |  |  |  |  | " headers="calendario-sexta"><span>31</span></td><td class="" title="" headers="calendario-sabado"><span>&nbsp;</span></td>
+</tr></tbody></table><ul class="calendario-referencia">
+<li class="info">De 1/7 a 11/12: Projeto de extensão: Jornal escolar do Ensino Médio em Ilha Solteira: Uma Arara me Contou</li>
+<li class="info">De 2/2 a 8/7: Oficina Estudo e construção do currículo de computação do município de Araçatuba sob a perspectiva da aprendizagem baseada em projetos</li>
+<li class="info">De 3/3 a 15/12: Grupo de Estudos e Pesquisas - Laboratório de Política e Gestão da Educação Especial (LPGEEs)</li>
+<li class="info">De 23/3 a 6/7: Auxiliar de Serviços Diversos - Cubatão</li>
+<li class="info">De 1/4 a 31/10: Comissão Organizadora da 23ª Semana Nacional de Ciência e Tecnologia do IFSP Campus Catanduva</li>
+<li class="info">De 11/4 a 5/7: curso de Libras (básico)</li>
+<li class="info">De 9/5 a 3/10: Literatura nos Vestibulares: UNICAMP 2027</li>
+<li class="info">De 14/5 a 2/7: English Club</li>
+<li class="info">De 14/5 a 1/7: Práticas de conversação em Libras</li>
+<li class="info">De 16/5 a 10/10: Literatura nos Vestibulares: FUVEST 2027</li>
+<li class="info">De 19/5 a 24/11: CultivaMaker – Automação de Hortas Inteligentes como Metodologia Maker</li>
+<li class="info">De 21/5 a 2/7: Curso de Manejo de Estresse Breve</li>
+<li class="info">De 22/5 a 27/11: CultivaMaker – Automação de Hortas Inteligentes como Metodologia Maker</li>
+<li class="info">De 5/6 a 3/7: Dançando a filosofia dos Florais de Bach</li>
+<li class="info">De 22/6 a 22/8: Concurso Estadual Paulista promovido pela FFABESP</li>
+<li class="info">De 30/6 a 3/7: Diversidade, Inclusão e Educação Antirracista: Reflexões e Práticas para uma Escola Mais Equitativa</li>
+<li class="info">Dia 1: Cine debate: Medida Provisória - a questão racial no Brasil</li>
+<li class="info">Dia 1: Ideias não Bastam: Como a IA e o Design Thinking Separarão Criadores de Seguidores</li>
+<li class="info">Dia 1: Curso de Iniciação a Prática do Pebolim</li>
+<li class="info">Dia 1: Da diversidade biológica à sociobiodiversidade.</li>
+<li class="info">Dia 1: Visita Técnica - Estação Verde</li>
+<li class="info">Dia 1: I Mostra de Pesquisa do Curso de Engenharia de Produção</li>
+<li class="info">Dia 1: 7ª Visita dos estudantes do Ensino Fundamental da EJA do CEMUS I ao IFSP Campus Salto.</li>
+<li class="info">Dia 1: III SIMCADS | Bancas de TCC do Curso de ADS (01/07/2026)</li>
+<li class="info">Dia 1: Vivência de Dança Circular, com Cida Nogueira</li>
+</ul></div>
+        
+      
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="https://suap.ifsp.edu.br/eventos/calendario_eventos/" class="default"><i class="fas fa-link" aria-hidden="true"></i> Acessar Calendário de Eventos Anual</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="SUAP MOBILE - IFSP"><i class="fas fa-link" aria-hidden="true"></i> SUAP Mobile - IFSP</span>
+    
+      <a class="esconder-quadro" href="https://suap.ifsp.edu.br/#" data-quadro="SUAP MOBILE - IFSP" title="Esconder quadro: SUAP Mobile - IFSP">
+        <span class="fas fa-times" aria-hidden="true"></span>
+        <span class="sr-only">Esconder quadro</span>
+      </a>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="https://play.google.com/store/apps/details?id=br.edu.ifsp.ifspconecta" target="_blank" class="default"><i class="fas fa-mobile" aria-hidden="true"></i> SUAP Mobile (Android)</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+                <div class="modulo modulo-info ">
+  <h3 class="portlet-header">
+    <span class="titulo" data-quadro="LINKS ÚTEIS - IFSP"><i class="fas fa-link" aria-hidden="true"></i> Links Úteis - IFSP</span>
+    
+      <a class="esconder-quadro" href="https://suap.ifsp.edu.br/#" data-quadro="LINKS ÚTEIS - IFSP" title="Esconder quadro: Links Úteis - IFSP">
+        <span class="fas fa-times" aria-hidden="true"></span>
+        <span class="sr-only">Esconder quadro</span>
+      </a>
+    
+  </h3>
+  <div class="wrapper">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <ul class="action-bar">
+        
+          <li><a href="javascript:" onclick="login_pearson.submit();" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> Biblioteca Virtual Pearson
+                        <form name="login_pearson" action="https://middleware-bv.am4.com.br/SSO/ifsp" method="post" target="_blank"> 
+                        <input id="login" name="login" type="hidden" value="CB3051064">
+                        <input id="token" name="token" type="hidden" value="9d3e04fc9168b63b1697002c3f1e8a26">
+                        </form>
+                        </a></li>
+        
+          <li><a href="https://play.google.com/store/apps/dev?id=6118909284895417059&amp;hl=pt_BR" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> Google Play</a></li>
+        
+          <li><a href="https://mail.google.com/a/aluno.ifsp.edu.br" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> E-mail Institucional</a></li>
+        
+          <li><a href="https://ifsp.pergamum.com.br/" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> Biblioteca Pergamum</a></li>
+        
+          <li><a href="https://helios.ifsp.edu.br/" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> Sistema de Votação Online do IFSP</a></li>
+        
+          <li><a href="http://periodicos.capes.gov.br/" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> Portal de Periódicos Capes</a></li>
+        
+          <li><a href="https://www-periodicos-capes-gov-br.ez338.periodicos.capes.gov.br/index.php/acesso-cafe.html" target="_blank" class="default"><i class="fas fa-link" aria-hidden="true"></i> Portal de Periódicos Capes - Acesso Remoto via CAFe</a></li>
+        
+      </ul>
+    
+  </div>
+</div>
+
+
+              
+            </div>
+          
+            <div class="flex-container coluna coluna-centro ui-sortable">
+              
+            </div>
+          
+            <div class="flex-container coluna coluna-direita ui-sortable">
+              
+            </div>
+          
+        </div>
+      
+
+      
+    </div>
+
+  </div>
+
+  <ul class="acesso-rapido">
+  
+    <li class="hint" data-hint="Meus Documentos SUAP">
+      <a href="https://suap.ifsp.edu.br/comum/documentos_emitidos_suap/">
+        <span class="fas fa-file-pdf" aria-hidden="true"></span>
+        <span class="sr-only">Meus Documentos SUAP</span>
+      </a>
+    </li>
+  
+    <li class="hint" data-hint="Telefones">
+      <a href="https://suap.ifsp.edu.br/comum/telefones/">
+        <span class="fas fa-phone" aria-hidden="true"></span>
+        <span class="sr-only">Telefones</span>
+      </a>
+    </li>
+  
+</ul>
+
+
+
+        <ul class="action-links hide-sm">
+          <li><a href="https://suap.ifsp.edu.br/#" id="topodapagina"><span class="fas fa-caret-up" aria-hidden="true"></span> Topo da Página</a></li>
+          <li class="action-print"><a href="https://suap.ifsp.edu.br/#"><span class="fas fa-print" aria-hidden="true"></span> Imprimir</a></li>
+          <li><a href="https://suap.ifsp.edu.br/admin/comum/sessioninfo/"><span class="fas fa-sign-in-alt" aria-hidden="true"></span> Sessões</a></li>
+          <li><a href="https://suap.ifsp.edu.br/comum/alterar_contraste/"><span class="fas fa-adjust" aria-hidden="true"></span> Contrastes</a></li>
+          <li><a href="https://suap.ifsp.edu.br/comum/temas/"><span class="fas fa-palette" aria-hidden="true"></span> Temas</a></li>
+          
+          
+  
+    <li><a href="https://suap.ifsp.edu.br/comum/index/exibir_quadro/" class="popup float-right"><span class="fas fa-th" aria-hidden="true"></span> Quadros</a></li>
+  
+
+        </ul>
+
+
+      </main>
+
+      
+      
+    </div>
+
+    
+      <footer>
+        <div class="float-right">
+          <dl>
+            <dt>Administração</dt>
+            <dd><a href="mailto:suporte@ifsp.edu.br">suporte@ifsp.edu.br</a></dd>
+          </dl>
+          <dl>
+            <dt>Desenvolvimento</dt>
+            <dd><a href="http://portal.ifrn.edu.br/">IFRN</a></dd>
+          </dl>
+          <dl>
+            <dt>Mantido por</dt>
+            <dd><a href="http://www.ifsp.edu.br/">IFSP</a></dd>
+          </dl>
+          <dl>
+            <dt>Servidor</dt>
+            <dd>58c9955a5c9f</dd>
+          </dl>
+          
+            <dl>
+  <dt>Última importação do SIAPE</dt>
+  <dd>22/07/2026</dd>
+</dl>
+
+<dl>
+  <dt>Última atualização do SUAP</dt>
+  <dd>21/07/2026 07:39</dd>
+</dl>
+
+          
+          <dl>
+            <dt hidden="">Desenvolvimento:</dt>
+            <dd><a href="http://www.djangoproject.com/"><img src="./inicio_files/django.gif" alt="Feito com Django"></a></dd>
+          </dl>
+        </div>
+        
+      </footer>
+
+      <a href="https://suap.ifsp.edu.br/#0" class="go-to-bottom">Ir para Rodapé</a>
+
+      
+      <div class="challenge-backdrop"></div>
+
+    
+
+    <div id="notifications-non-read"></div>
+
+    <script>
+      jQuery(document).ready(function() {
+        open_menu_item("");
+        $(window).on("unload", function () {
+          $('input[type=submit]').removeAttr('disabled');
+        });
+
+        // remove o label padrão do django
+        var labeless = $('input.labeless');
+        labeless.prev().remove();
+        labeless.next().addClass('help_marginless');
+        labeless.next().removeClass('help');
+
+        // adicionar uma cor padrão que indica que os campos estão desabilitados
+        $('input[readonly=true]').css('background-color', '#eee');
+        $('textarea[readonly=true]').css('background-color', '#eee');
+
+
+        // reseta o formulário da página
+        $('#btn_reset_forms').click(function () {
+          $('form').each(function() {
+            this.reset();
+          });
+        });
+      });
+    </script>
+
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          challengeBackdrop = document.querySelector(".challenge-backdrop");
+
+          launchChallengeScreen = () => {
+            challengeBackdrop.dataset.active = "yes";
+            htmx.ajax(
+              'GET',
+              '/comum/session-challenge/?challenge_token=inSAQtorSj-HueFQbKwzDw:CB3051064:37iq6M0Cz0qY7lbzRp5n71mKRmc-d6ecRGpN9S_JIfQ',
+              {target:'.challenge-backdrop', swap:'innerHTML'}
+            ).catch(error => {
+              console.log('Failed to load session challenge...', error);
+              challengeBackdrop.dataset.active = "no";
+            });
+          };
+
+          const checkDelayThreshold = 15 * 60 * 1000; // 15 min
+          let lastCheck = new Date();
+          let sessionExpiresAt = new Date(lastCheck.getTime() + checkDelayThreshold); // Fake 15 min pra evitar pool inicial imediato.
+
+          setInterval(() => {
+            if (sessionExpiresAt && lastCheck) {
+              const now = new Date();
+              const lastCheckPastTime = now - lastCheck;
+              if (now < sessionExpiresAt && lastCheckPastTime < checkDelayThreshold) {
+                return;
+              }
+            }
+            fetch("/comum/session-state/")
+              .then(response => {
+              if (response.status === 401) {
+                if (challengeBackdrop.dataset.active === "no") {
+                  launchChallengeScreen()
+                  console.log('Session expired. Displaying challenge authentication form...');
+                }
+              } else {
+                challengeBackdrop.dataset.active = "no";
+                challengeBackdrop.replaceChildren();
+                if (response.status === 200) {
+                  response.json().then(data => {
+                    if (data.expires_at) {
+                      sessionExpiresAt = new Date(data.expires_at);
+                      lastCheck = new Date();
+                    }
+                  })
+                }
+              }
+            })
+              .catch(error => {
+              console.error('Failed to check session state:', error);
+            });
+          }, 10000)
+        })
+      </script>
+    
+
+    
+      <script src="./inicio_files/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous"></script>
+    
+  
+
+<div><div id="loading-tinybox" style="height: 4914px;"></div>    <div id="loading-tinybox-image" style="height: 593px;"></div>    <div id="loading-tinybox-image-wait" style="height: 3914px;"></div>    <div id="history-cache"></div></div></body></html>

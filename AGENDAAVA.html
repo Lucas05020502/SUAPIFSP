@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://suap.ifsp.edu.br/edu/calendario_avaliacao/ -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Agenda de Avaliações - SUAP: Sistema Unificado de Administração Pública</title>
+    
+    <meta name="keywords" content="suap, administração, pública, mec, ifrn">
+    <meta content="SUAP: Sistema Unificado de Administração Pública" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="NONE,NOARCHIVE">
+
+    
+    <link rel="shortcut icon" href="https://suap.ifsp.edu.br/static/comum/img/favicon.png">
+
+    
+    
+      
+        <link href="./AGENDAAVA_files/main_default.css" rel="stylesheet" type="text/css" media="all">
+      
+    
+    
+
+    
+    <script type="text/javascript" src="./AGENDAAVA_files/jquery.min.js.download" charset="utf-8"></script>
+
+    
+    <script src="./AGENDAAVA_files/tinybox.js.download"></script>
+
+    
+    <script src="./AGENDAAVA_files/jquery.ui.custom.min.js.download"></script>
+    <script type="text/javascript" src="./AGENDAAVA_files/jquery.ui.datepicker-pt-BR.js.download" charset="utf-8"></script>
+    <script type="text/javascript" src="./AGENDAAVA_files/main.js.download" charset="utf-8"></script>
+
+    <script type="text/javascript" src="./AGENDAAVA_files/select2.js.download" charset="utf-8"></script>
+    <link href="./AGENDAAVA_files/select2.min.css" rel="stylesheet" type="text/css" media="all">
+
+    
+    <script type="text/javascript" src="./AGENDAAVA_files/nouislider.min.js.download" charset="utf-8"></script>
+
+    <script>
+      jQuery(document).ready(function() {
+        initAll();
+        initMenu();
+
+        /*https://stackoverflow.com/questions/42111784/how-user-will-logout-from-all-open-tabs-automatically-when-user-logs-out-in-one/42181190#42181190*/
+        window.addEventListener('storage', function(event){
+          if (event.key == 'logout-event') {
+            window.location.replace("/accounts/logout/");
+          }
+        });
+        $( ".menu-logout" ).click(function() {
+          localStorage.setItem('logout-event', 'logout' + Math.random());
+        });
+
+        /* Menu principal: Para dispositivos moveis */
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          jQuery("body").addClass("hideSidebar");
+        }
+
+        
+          $("html").ready(function(event) {
+
+            $.ajax({
+              type: "GET",
+              url: "/comum/qtd_notificacoes_nao_lidas/",
+              success: function(response) {
+                if(parseInt(response, 10) > 99){
+                  $("#counter_notificacoes").append("<span class='counter'>99+</span>");
+                }
+                if(parseInt(response, 10) > 0){
+                  $("#counter_notificacoes").append("<span class='counter'>"+response+"</span>");
+                }
+              }
+            });
+          });
+        
+
+      });
+    </script>
+    
+
+    
+
+    
+    
+  <style>                      .htmx-indicator{opacity:0;transition: opacity 200ms ease-in;}                      .htmx-request .htmx-indicator{opacity:1}                      .htmx-request.htmx-indicator{opacity:1}                    </style></head>
+
+  <body hx-headers="{&quot;X-CSRFToken&quot;: &quot;qhR0CZfdmDk7tLGwU5FKbpoi831ME8ESfrYACOqiiPJzrb5GL38yvr6nGAEyJ1G3&quot;}" hx-indicator="#loadIndicator" class="" data-suap-theme="padrao" data-suap-contrast="normal">
+
+
+    
+    
+
+    
+    
+
+    
+
+    <div class="holder">
+      <div id="loadIndicator" class="htmx-indicator">
+        <img src="./AGENDAAVA_files/loadbar.svg">
+      </div>
+      
+        <a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" class="toggleSidebar"><span class="fas fa-chevron-left" aria-hidden="true"></span> <span class="sr-only">Mostrar/Esconder barra lateral</span></a>
+        <aside class="nav">
+          <header>
+            <h1><a href="https://suap.ifsp.edu.br/" title="SUAP: Sistema Unificado de Administração Pública">SUAP</a></h1>
+
+            
+              <div class="notifications">
+                <a id="counter_notificacoes" href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#">
+                  <span class="fas fa-bell" aria-hidden="true"></span>
+                  <span class="sr-only">Notificações</span>
+                <span class="counter">22</span></a>
+              </div>
+            
+
+            
+              
+                <div id="user-tools">
+                  
+                    <a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/">
+                      <div class="photo-circle small">
+                        <img src="./AGENDAAVA_files/Mgj7d02GoqzDoRq_8cJLz7Cirx87nAGkVtSeDGYCODM.jpg" alt="Lucas Souza">
+                      </div>
+                      <span>Lucas Souza</span>
+                    </a>
+                  
+                </div>
+              
+            
+          </header>
+          
+            
+              <form id="__buscar_menu__" action="https://suap.ifsp.edu.br/edu/calendario_avaliacao/" onsubmit="return false;" class="buscar_menu">
+                <input type="search" placeholder="Buscar Item de Menu" id="__filterinput__">
+              </form>
+
+              
+                <nav>
+                  <ul class="_main_menu">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Projetos"> <span>Projetos</span></a><ul><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Editora"> <span>Editora</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Notificações"> <span>Notificações</span></a><ul><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Serviço Social"> <span>Serviço Social</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Programas"> <span>Programas</span></a><ul><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Relatórios"> <span>Relatórios</span></a><ul><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Comunicador"> <span>Comunicador</span></a><ul><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Egressos"> <span>Egressos</span></a><ul><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Assuntos"> <span>Assuntos</span></a><ul><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="qhR0CZfdmDk7tLGwU5FKbpoi831ME8ESfrYACOqiiPJzrb5GL38yvr6nGAEyJ1G3">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul>
+                <ul class="" id="_menu_list_expanded" style="display: none;">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Projetos"> <span>Projetos</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Editora"> <span>Editora</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul style="display: block;"><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Notificações"> <span>Notificações</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul style="display: block;"><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Serviço Social"> <span>Serviço Social</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Programas"> <span>Programas</span></a><ul style="display: block;"><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Relatórios"> <span>Relatórios</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Comunicador"> <span>Comunicador</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Egressos"> <span>Egressos</span></a><ul style="display: block;"><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" title="Assuntos"> <span>Assuntos</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="qhR0CZfdmDk7tLGwU5FKbpoi831ME8ESfrYACOqiiPJzrb5GL38yvr6nGAEyJ1G3" style="display: inline-block;">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul></nav>
+              
+            
+          
+        </aside>
+      
+
+      
+      
+
+      <main id="content">
+
+        <div id="breadcrumbs">
+          
+        </div>
+
+        
+          <div class="title-container">
+            <h2>Agenda de Avaliações</h2>
+            <div class="object-status"></div>
+            <div class="action-bar-container"></div>
+          </div>
+        
+
+        
+
+  <h1> &nbsp; <i class="fa fa-calendar-alt"></i></h1>
+  
+    <div class="msg alert">As avaliações agendadas em dias com ao menos <b>outras duas avaliações da mesma turma</b> serão exibidas na cor "amarela".</div>
+    <div class="box"><h3>Abril/2026</h3><div class="calendario calendario-mensal">
+<table>
+<thead>
+<tr>
+<th class="semana">Dom</th>
+<th class="semana">Seg</th>
+<th class="semana">Ter</th>
+<th class="semana">Qua</th>
+<th class="semana">Qui</th>
+<th class="semana">Sex</th>
+<th class="semana">Sab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="vazio" title="" headers="calendario-domingo"></td><td class="vazio" title="" headers="calendario-segunda"></td><td class="vazio" title="" headers="calendario-terca"></td><td class="" title="" headers="calendario-quarta"><span>1</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>2</span><ul class="calendario-referencia">
+<li class="info" title="Lista 1 - Aritméticos - 390567 - SUP.13703 (CBTPRC1) - PROGRAMAÇÃO DE COMPUTADORES 1  - Graduação [42.80 h/57 Aulas]">Atividade A1 - Etapa 1 - PROGRAMAÇÃO DE COMPUTADORES 1</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>3</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>4</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>5</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>6</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>7</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>8</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>9</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>10</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>11</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>12</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>13</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>14</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>15</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>16</span><ul class="calendario-referencia">
+<li class="info" title="Lista 2 - Decisão - 390567 - SUP.13703 (CBTPRC1) - PROGRAMAÇÃO DE COMPUTADORES 1  - Graduação [42.80 h/57 Aulas]">Atividade A2 - Etapa 1 - PROGRAMAÇÃO DE COMPUTADORES 1</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>17</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>18</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>19</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>20</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>21</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>22</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>23</span><ul class="calendario-referencia">
+<li class="info" title="Avaliação Parcial - 390564 - SUP.13700 (CBTCEXP) - COMUNICAÇÃO E EXPRESSÃO  - Graduação [28.50 h/38 Aulas]">Prova A1 - Etapa 1 - COMUNICAÇÃO E EXPRESSÃO</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>24</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>25</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>26</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>27</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>28</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>29</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>30</span><ul class="calendario-referencia">
+</ul></td><td class="vazio" title="" headers="calendario-sexta"></td><td class="vazio" title="" headers="calendario-sabado"></td>
+</tr></tbody></table></div></div> <div class="box"><h3>Maio/2026</h3><div class="calendario calendario-mensal">
+<table>
+<thead>
+<tr>
+<th class="semana">Dom</th>
+<th class="semana">Seg</th>
+<th class="semana">Ter</th>
+<th class="semana">Qua</th>
+<th class="semana">Qui</th>
+<th class="semana">Sex</th>
+<th class="semana">Sab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="vazio" title="" headers="calendario-domingo"></td><td class="vazio" title="" headers="calendario-segunda"></td><td class="vazio" title="" headers="calendario-terca"></td><td class="vazio" title="" headers="calendario-quarta"></td><td class="vazio" title="" headers="calendario-quinta"></td><td class="" title="" headers="calendario-sexta"><span>1</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>2</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>3</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>4</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>5</span><ul class="calendario-referencia">
+<li class="info" title="AVALIAÇÃO SOMATIVA1 - 390566 - SUP.13702 (CBTIAIN) - INTRODUÇÃO À AUTOMAÇÃO INDUSTRIAL  - Graduação [28.50 h/38 Aulas]">Trabalho P1 - Etapa 1 - INTRODUÇÃO À AUTOMAÇÃO INDUSTRIAL</li>
+<li class="info" title="Exercícios em sala - 390570 - SUP.13706 (CBTQUIT) - QUÍMICA TEÓRICA  - Graduação [42.80 h/57 Aulas]">Exercício L1 - Etapa 1 - QUÍMICA TEÓRICA</li>
+</ul></td><td class="" title="" headers="calendario-quarta"><span>6</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>7</span><ul class="calendario-referencia">
+<li class="info" title="Lista 3 - Repetição - 390567 - SUP.13703 (CBTPRC1) - PROGRAMAÇÃO DE COMPUTADORES 1  - Graduação [42.80 h/57 Aulas]">Atividade A3 - Etapa 1 - PROGRAMAÇÃO DE COMPUTADORES 1</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>8</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>9</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>10</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>11</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>12</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>13</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>14</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>15</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>16</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>17</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>18</span><ul class="calendario-referencia">
+<li class="info" title="P1 - 390917 - SUP.13701 (CBTDESA) - DESENHO  - Graduação [71.30 h/95 Aulas]">Prova A1 - Etapa 1 - DESENHO</li>
+</ul></td><td class="" title="" headers="calendario-terca"><span>19</span><ul class="calendario-referencia">
+<li class="info" title="Avaliação Parcial - 390570 - SUP.13706 (CBTQUIT) - QUÍMICA TEÓRICA  - Graduação [42.80 h/57 Aulas]">Prova P1 - Etapa 1 - QUÍMICA TEÓRICA</li>
+</ul></td><td class="" title="" headers="calendario-quarta"><span>20</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>21</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>22</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>23</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>24</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>25</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>26</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>27</span><ul class="calendario-referencia">
+<li class="alert" title="Prova - 390918 - SUP.13704 (CBTFIE1) - FÍSICA EXPERIMENTAL 1  - Graduação [28.50 h/38 Aulas]">Prova P1 - Etapa 1 - FÍSICA EXPERIMENTAL 1</li>
+<li class="alert" title="Prova - 394830 - SUP.13705 (CBTFIS1) - FÍSICA TEÓRICA 1  - Graduação [42.80 h/57 Aulas]">Prova P1 - Etapa 1 - FÍSICA TEÓRICA 1</li>
+</ul></td><td class="" title="" headers="calendario-quinta"><span>28</span><ul class="calendario-referencia">
+<li class="info" title="Proj JAP - 390567 - SUP.13703 (CBTPRC1) - PROGRAMAÇÃO DE COMPUTADORES 1  - Graduação [42.80 h/57 Aulas]">Atividade A4 - Etapa 1 - PROGRAMAÇÃO DE COMPUTADORES 1</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>29</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>30</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>31</span><ul class="calendario-referencia">
+</ul></td><td class="vazio" title="" headers="calendario-segunda"></td><td class="vazio" title="" headers="calendario-terca"></td><td class="vazio" title="" headers="calendario-quarta"></td><td class="vazio" title="" headers="calendario-quinta"></td><td class="vazio" title="" headers="calendario-sexta"></td><td class="vazio" title="" headers="calendario-sabado"></td>
+</tr></tbody></table></div></div> <div class="box"><h3>Junho/2026</h3><div class="calendario calendario-mensal">
+<table>
+<thead>
+<tr>
+<th class="semana">Dom</th>
+<th class="semana">Seg</th>
+<th class="semana">Ter</th>
+<th class="semana">Qua</th>
+<th class="semana">Qui</th>
+<th class="semana">Sex</th>
+<th class="semana">Sab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="vazio" title="" headers="calendario-domingo"></td><td class="" title="" headers="calendario-segunda"><span>1</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>2</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>3</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>4</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>5</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>6</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>7</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>8</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>9</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>10</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>11</span><ul class="calendario-referencia">
+<li class="info" title="Proj Motoboys (Array) - 390567 - SUP.13703 (CBTPRC1) - PROGRAMAÇÃO DE COMPUTADORES 1  - Graduação [42.80 h/57 Aulas]">Atividade A5 - Etapa 1 - PROGRAMAÇÃO DE COMPUTADORES 1</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>12</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>13</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>14</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>15</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>16</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>17</span><ul class="calendario-referencia">
+<li class="alert" title="Prova - 390918 - SUP.13704 (CBTFIE1) - FÍSICA EXPERIMENTAL 1  - Graduação [28.50 h/38 Aulas]">Prova P2 - Etapa 1 - FÍSICA EXPERIMENTAL 1</li>
+<li class="alert" title="Prova - 394830 - SUP.13705 (CBTFIS1) - FÍSICA TEÓRICA 1  - Graduação [42.80 h/57 Aulas]">Prova P2 - Etapa 1 - FÍSICA TEÓRICA 1</li>
+</ul></td><td class="" title="" headers="calendario-quinta"><span>18</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>19</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>20</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>21</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>22</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>23</span><ul class="calendario-referencia">
+<li class="info" title="AVALIAÇÃO SOMATIVA 2 - 390566 - SUP.13702 (CBTIAIN) - INTRODUÇÃO À AUTOMAÇÃO INDUSTRIAL  - Graduação [28.50 h/38 Aulas]">Trabalho P2 - Etapa 1 - INTRODUÇÃO À AUTOMAÇÃO INDUSTRIAL</li>
+</ul></td><td class="" title="" headers="calendario-quarta"><span>24</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>25</span><ul class="calendario-referencia">
+<li class="info" title="Atividades de produção textual - 390564 - SUP.13700 (CBTCEXP) - COMUNICAÇÃO E EXPRESSÃO  - Graduação [28.50 h/38 Aulas]">Atividade A2 - Etapa 1 - COMUNICAÇÃO E EXPRESSÃO</li>
+</ul></td><td class="" title="" headers="calendario-sexta"><span>26</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>27</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>28</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>29</span><ul class="calendario-referencia">
+<li class="info" title="P2 - 390917 - SUP.13701 (CBTDESA) - DESENHO  - Graduação [71.30 h/95 Aulas]">Prova A2 - Etapa 1 - DESENHO</li>
+</ul></td><td class="" title="" headers="calendario-terca"><span>30</span><ul class="calendario-referencia">
+</ul></td><td class="vazio" title="" headers="calendario-quarta"></td><td class="vazio" title="" headers="calendario-quinta"></td><td class="vazio" title="" headers="calendario-sexta"></td><td class="vazio" title="" headers="calendario-sabado"></td>
+</tr></tbody></table></div></div> <div class="box"><h3>Julho/2026</h3><div class="calendario calendario-mensal">
+<table>
+<thead>
+<tr>
+<th class="semana">Dom</th>
+<th class="semana">Seg</th>
+<th class="semana">Ter</th>
+<th class="semana">Qua</th>
+<th class="semana">Qui</th>
+<th class="semana">Sex</th>
+<th class="semana">Sab</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="vazio" title="" headers="calendario-domingo"></td><td class="vazio" title="" headers="calendario-segunda"></td><td class="vazio" title="" headers="calendario-terca"></td><td class="" title="" headers="calendario-quarta"><span>1</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>2</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>3</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>4</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>5</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>6</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>7</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>8</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>9</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>10</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>11</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>12</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>13</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>14</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>15</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>16</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>17</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>18</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>19</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>20</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>21</span><ul class="calendario-referencia">
+</ul></td><td class=" hoje" title="" headers="calendario-quarta"><span>22</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>23</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>24</span><ul class="calendario-referencia">
+</ul></td><td class="fds " title="" headers="calendario-sabado"><span>25</span><ul class="calendario-referencia">
+</ul></td>
+</tr><tr>
+<td class="fds " title="" headers="calendario-domingo"><span>26</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-segunda"><span>27</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-terca"><span>28</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quarta"><span>29</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-quinta"><span>30</span><ul class="calendario-referencia">
+</ul></td><td class="" title="" headers="calendario-sexta"><span>31</span><ul class="calendario-referencia">
+</ul></td><td class="vazio" title="" headers="calendario-sabado"></td>
+</tr></tbody></table></div></div>
+  
+
+
+
+        <ul class="action-links hide-sm">
+          <li><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#" id="topodapagina"><span class="fas fa-caret-up" aria-hidden="true"></span> Topo da Página</a></li>
+          <li class="action-print"><a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#"><span class="fas fa-print" aria-hidden="true"></span> Imprimir</a></li>
+          <li><a href="https://suap.ifsp.edu.br/admin/comum/sessioninfo/"><span class="fas fa-sign-in-alt" aria-hidden="true"></span> Sessões</a></li>
+          <li><a href="https://suap.ifsp.edu.br/comum/alterar_contraste/"><span class="fas fa-adjust" aria-hidden="true"></span> Contrastes</a></li>
+          <li><a href="https://suap.ifsp.edu.br/comum/temas/"><span class="fas fa-palette" aria-hidden="true"></span> Temas</a></li>
+          
+          
+          
+        </ul>
+
+
+      </main>
+
+      
+  
+
+    </div>
+
+    
+      <footer>
+        <div class="float-right">
+          <dl>
+            <dt>Administração</dt>
+            <dd><a href="mailto:suporte@ifsp.edu.br">suporte@ifsp.edu.br</a></dd>
+          </dl>
+          <dl>
+            <dt>Desenvolvimento</dt>
+            <dd><a href="http://portal.ifrn.edu.br/">IFRN</a></dd>
+          </dl>
+          <dl>
+            <dt>Mantido por</dt>
+            <dd><a href="http://www.ifsp.edu.br/">IFSP</a></dd>
+          </dl>
+          <dl>
+            <dt>Servidor</dt>
+            <dd>68f6065a4143</dd>
+          </dl>
+          
+            <dl>
+  <dt>Última importação do SIAPE</dt>
+  <dd>22/07/2026</dd>
+</dl>
+
+<dl>
+  <dt>Última atualização do SUAP</dt>
+  <dd>21/07/2026 07:39</dd>
+</dl>
+
+          
+          <dl>
+            <dt hidden="">Desenvolvimento:</dt>
+            <dd><a href="http://www.djangoproject.com/"><img src="./AGENDAAVA_files/django.gif" alt="Feito com Django"></a></dd>
+          </dl>
+        </div>
+        
+      </footer>
+
+      <a href="https://suap.ifsp.edu.br/edu/calendario_avaliacao/#0" class="go-to-bottom">Ir para Rodapé</a>
+
+      
+      <div class="challenge-backdrop"></div>
+
+    
+
+    <div id="notifications-non-read"></div>
+
+    <script>
+      jQuery(document).ready(function() {
+        open_menu_item("");
+        $(window).on("unload", function () {
+          $('input[type=submit]').removeAttr('disabled');
+        });
+
+        // remove o label padrão do django
+        var labeless = $('input.labeless');
+        labeless.prev().remove();
+        labeless.next().addClass('help_marginless');
+        labeless.next().removeClass('help');
+
+        // adicionar uma cor padrão que indica que os campos estão desabilitados
+        $('input[readonly=true]').css('background-color', '#eee');
+        $('textarea[readonly=true]').css('background-color', '#eee');
+
+
+        // reseta o formulário da página
+        $('#btn_reset_forms').click(function () {
+          $('form').each(function() {
+            this.reset();
+          });
+        });
+      });
+    </script>
+
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          challengeBackdrop = document.querySelector(".challenge-backdrop");
+
+          launchChallengeScreen = () => {
+            challengeBackdrop.dataset.active = "yes";
+            htmx.ajax(
+              'GET',
+              '/comum/session-challenge/?challenge_token=inSAQtorSj-HueFQbKwzDw:CB3051064:37iq6M0Cz0qY7lbzRp5n71mKRmc-d6ecRGpN9S_JIfQ',
+              {target:'.challenge-backdrop', swap:'innerHTML'}
+            ).catch(error => {
+              console.log('Failed to load session challenge...', error);
+              challengeBackdrop.dataset.active = "no";
+            });
+          };
+
+          const checkDelayThreshold = 15 * 60 * 1000; // 15 min
+          let lastCheck = new Date();
+          let sessionExpiresAt = new Date(lastCheck.getTime() + checkDelayThreshold); // Fake 15 min pra evitar pool inicial imediato.
+
+          setInterval(() => {
+            if (sessionExpiresAt && lastCheck) {
+              const now = new Date();
+              const lastCheckPastTime = now - lastCheck;
+              if (now < sessionExpiresAt && lastCheckPastTime < checkDelayThreshold) {
+                return;
+              }
+            }
+            fetch("/comum/session-state/")
+              .then(response => {
+              if (response.status === 401) {
+                if (challengeBackdrop.dataset.active === "no") {
+                  launchChallengeScreen()
+                  console.log('Session expired. Displaying challenge authentication form...');
+                }
+              } else {
+                challengeBackdrop.dataset.active = "no";
+                challengeBackdrop.replaceChildren();
+                if (response.status === 200) {
+                  response.json().then(data => {
+                    if (data.expires_at) {
+                      sessionExpiresAt = new Date(data.expires_at);
+                      lastCheck = new Date();
+                    }
+                  })
+                }
+              }
+            })
+              .catch(error => {
+              console.error('Failed to check session state:', error);
+            });
+          }, 10000)
+        })
+      </script>
+    
+
+    
+      <script src="./AGENDAAVA_files/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous"></script>
+    
+  
+
+<div><div id="loading-tinybox" style="height: 4131px;"></div>    <div id="loading-tinybox-image" style="height: 593px;"></div>    <div id="loading-tinybox-image-wait" style="height: 3131px;"></div>    <div id="history-cache"></div></div></body></html>

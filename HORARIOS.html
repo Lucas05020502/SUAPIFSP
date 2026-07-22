@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&ano-periodo=2026.2 -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Lucas Mauricio Silva de Souza (CB3051064) - SUAP: Sistema Unificado de Administração Pública</title>
+    
+    <meta name="keywords" content="suap, administração, pública, mec, ifrn">
+    <meta content="SUAP: Sistema Unificado de Administração Pública" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="NONE,NOARCHIVE">
+
+    
+    <link rel="shortcut icon" href="https://suap.ifsp.edu.br/static/comum/img/favicon.png">
+
+    
+    
+      
+        <link href="./HORARIOS_files/main_default.css" rel="stylesheet" type="text/css" media="all">
+      
+    
+    
+
+    
+    <script type="text/javascript" src="./HORARIOS_files/jquery.min.js.download" charset="utf-8"></script>
+
+    
+    <script src="./HORARIOS_files/tinybox.js.download"></script>
+
+    
+    <script src="./HORARIOS_files/jquery.ui.custom.min.js.download"></script>
+    <script type="text/javascript" src="./HORARIOS_files/jquery.ui.datepicker-pt-BR.js.download" charset="utf-8"></script>
+    <script type="text/javascript" src="./HORARIOS_files/main.js.download" charset="utf-8"></script>
+
+    <script type="text/javascript" src="./HORARIOS_files/select2.js.download" charset="utf-8"></script>
+    <link href="./HORARIOS_files/select2.min.css" rel="stylesheet" type="text/css" media="all">
+
+    
+    <script type="text/javascript" src="./HORARIOS_files/nouislider.min.js.download" charset="utf-8"></script>
+
+    <script>
+      jQuery(document).ready(function() {
+        initAll();
+        initMenu();
+
+        /*https://stackoverflow.com/questions/42111784/how-user-will-logout-from-all-open-tabs-automatically-when-user-logs-out-in-one/42181190#42181190*/
+        window.addEventListener('storage', function(event){
+          if (event.key == 'logout-event') {
+            window.location.replace("/accounts/logout/");
+          }
+        });
+        $( ".menu-logout" ).click(function() {
+          localStorage.setItem('logout-event', 'logout' + Math.random());
+        });
+
+        /* Menu principal: Para dispositivos moveis */
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          jQuery("body").addClass("hideSidebar");
+        }
+
+        
+          $("html").ready(function(event) {
+
+            $.ajax({
+              type: "GET",
+              url: "/comum/qtd_notificacoes_nao_lidas/",
+              success: function(response) {
+                if(parseInt(response, 10) > 99){
+                  $("#counter_notificacoes").append("<span class='counter'>99+</span>");
+                }
+                if(parseInt(response, 10) > 0){
+                  $("#counter_notificacoes").append("<span class='counter'>"+response+"</span>");
+                }
+              }
+            });
+          });
+        
+
+      });
+    </script>
+    
+
+    
+
+    
+  <script src="./HORARIOS_files/highcharts.js.download"></script>
+  <script src="./HORARIOS_files/exporting.js.download"></script>
+  <style>
+    #tabsAluno > li > a {
+      cursor: pointer;
+    }
+    .htmx-indicator{
+      display:none;
+    }
+    .htmx-request.indicator{
+      display:block;
+      padding: 5px;
+    }
+  </style>
+
+    
+  <style>                      .htmx-indicator{opacity:0;transition: opacity 200ms ease-in;}                      .htmx-request .htmx-indicator{opacity:1}                      .htmx-request.htmx-indicator{opacity:1}                    </style></head>
+
+  <body hx-headers="{&quot;X-CSRFToken&quot;: &quot;AV2jHAsAugY2Mc1h1Sbsm5LgzAM3rSLVtpzlbcAzAk8sFqAJ3xPPiWkyiydKSx3v&quot;}" hx-indicator="#loadIndicator" class="" data-suap-theme="padrao" data-suap-contrast="normal">
+
+
+    
+    
+
+    
+    
+
+    
+
+    <div class="holder">
+      <div id="loadIndicator" class="htmx-indicator">
+        <img src="./HORARIOS_files/loadbar.svg">
+      </div>
+      
+        <a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" class="toggleSidebar"><span class="fas fa-chevron-left" aria-hidden="true"></span> <span class="sr-only">Mostrar/Esconder barra lateral</span></a>
+        <aside class="nav">
+          <header>
+            <h1><a href="https://suap.ifsp.edu.br/" title="SUAP: Sistema Unificado de Administração Pública">SUAP</a></h1>
+
+            
+              <div class="notifications">
+                <a id="counter_notificacoes" href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#">
+                  <span class="fas fa-bell" aria-hidden="true"></span>
+                  <span class="sr-only">Notificações</span>
+                <span class="counter">22</span></a>
+              </div>
+            
+
+            
+              
+                <div id="user-tools">
+                  
+                    <a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/">
+                      <div class="photo-circle small">
+                        <img src="./HORARIOS_files/Mgj7d02GoqzDoRq_8cJLz7Cirx87nAGkVtSeDGYCODM.jpg" alt="Lucas Souza">
+                      </div>
+                      <span>Lucas Souza</span>
+                    </a>
+                  
+                </div>
+              
+            
+          </header>
+          
+            
+              <form id="__buscar_menu__" action="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2" onsubmit="return false;" class="buscar_menu">
+                <input type="search" placeholder="Buscar Item de Menu" id="__filterinput__">
+              </form>
+
+              
+                <nav>
+                  <ul class="_main_menu">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Projetos"> <span>Projetos</span></a><ul><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editora"> <span>Editora</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Notificações"> <span>Notificações</span></a><ul><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Serviço Social"> <span>Serviço Social</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Programas"> <span>Programas</span></a><ul><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Relatórios"> <span>Relatórios</span></a><ul><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicador"> <span>Comunicador</span></a><ul><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Egressos"> <span>Egressos</span></a><ul><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Assuntos"> <span>Assuntos</span></a><ul><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="AV2jHAsAugY2Mc1h1Sbsm5LgzAM3rSLVtpzlbcAzAk8sFqAJ3xPPiWkyiydKSx3v">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul>
+                <ul class="" id="_menu_list_expanded" style="display: none;">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Projetos"> <span>Projetos</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editora"> <span>Editora</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul style="display: block;"><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Notificações"> <span>Notificações</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul style="display: block;"><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Serviço Social"> <span>Serviço Social</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Programas"> <span>Programas</span></a><ul style="display: block;"><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Relatórios"> <span>Relatórios</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicador"> <span>Comunicador</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Egressos"> <span>Egressos</span></a><ul style="display: block;"><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Assuntos"> <span>Assuntos</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="AV2jHAsAugY2Mc1h1Sbsm5LgzAM3rSLVtpzlbcAzAk8sFqAJ3xPPiWkyiydKSx3v" style="display: inline-block;">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul><ul class="" id="_menu_list_expanded" style="display: none;">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Projetos"> <span>Projetos</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editora"> <span>Editora</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul style="display: block;"><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Notificações"> <span>Notificações</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul style="display: block;"><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Serviço Social"> <span>Serviço Social</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Programas"> <span>Programas</span></a><ul style="display: block;"><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Relatórios"> <span>Relatórios</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicador"> <span>Comunicador</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Egressos"> <span>Egressos</span></a><ul style="display: block;"><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Assuntos"> <span>Assuntos</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="AV2jHAsAugY2Mc1h1Sbsm5LgzAM3rSLVtpzlbcAzAk8sFqAJ3xPPiWkyiydKSx3v" style="display: inline-block;">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul><ul class="" id="_menu_list_expanded" style="display: none;">
+                    <li><a href="https://suap.ifsp.edu.br/"><span class="fas fa-home" aria-hidden="true"></span> <span>Início</span></a></li>
+                    <li class="has-child menu-documentosprocessos opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos/Processos"><i class="fas fa-documentosprocessos" aria-hidden="true"></i> <span>Documentos/Processos</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Documentos Eletrônicos"> <span>Documentos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_dashboard"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_dashboard/documento_eletronico/dashboard/" title="Dashboard"> <span>Dashboard</span></a></li><li class="" id="menu-item-documentosprocessos_documentoseletrônicos_documentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_documentoseletr%C3%B4nicos_documentos/admin/documento_eletronico/documentotexto/?opcao=1" title="Documentos"> <span>Documentos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Eletrônicos"> <span>Processos Eletrônicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processoseletrônicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processoseletr%C3%B4nicos_processos/admin/processo_eletronico/processo/?opcao=1" title="Processos"> <span>Processos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processos Físicos"> <span>Processos Físicos</span></a><ul style="display: block;"><li class="" id="menu-item-documentosprocessos_processosfísicos_processos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/documentosprocessos_processosf%C3%ADsicos_processos/admin/protocolo/processo/" title="Processos"> <span>Processos</span></a></li></ul></li></ul></li><li class="has-child menu-ensino opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Ensino"><i class="fas fa-ensino" aria-hidden="true"></i> <span>Ensino</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_agendadedefesasdetcc"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_agendadedefesasdetcc/edu/visualizar_agenda_defesas/" title="Agenda de Defesas de TCC"> <span>Agenda de Defesas de TCC</span></a></li><li class="" id="menu-item-ensino_boletins"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_boletins/edu/boletim_aluno/" title="Boletins"> <span>Boletins</span></a></li><li class="" id="menu-item-ensino_dadosdoaluno"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_dadosdoaluno/edu/meus_dados_academicos/" title="Dados do Aluno"> <span>Dados do Aluno</span></a></li><li class="" id="menu-item-ensino_locaisehoráriosdeaula"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_locaisehor%C3%A1riosdeaula/edu/locais_aula_aluno/" title="Locais e Horários de Aula"> <span>Locais e Horários de Aula</span></a></li><li class="" id="menu-item-ensino_minhasavaliações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_minhasavalia%C3%A7%C3%B5es/edu/calendario_avaliacao/" title="Minhas Avaliações"> <span>Minhas Avaliações</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Processo Seletivo"> <span>Processo Seletivo</span></a><ul style="display: block;"><li class="" id="menu-item-ensino_processoseletivo_inscriçõesparafiscal"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_processoseletivo_inscri%C3%A7%C3%B5esparafiscal/admin/processo_seletivo/inscricaofiscal/" title="Inscrições para Fiscal"> <span>Inscrições para Fiscal</span></a></li></ul></li><li class="" id="menu-item-ensino_turmasvirtuais"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/ensino_turmasvirtuais/edu/salas_virtuais/" title="Turmas Virtuais"> <span>Turmas Virtuais</span></a></li></ul></li><li class="has-child menu-pesquisa opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Pesquisa"><i class="fas fa-pesquisa" aria-hidden="true"></i> <span>Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editais de Pesquisa"> <span>Editais de Pesquisa</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Projetos"> <span>Projetos</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editaisdepesquisa_projetos_solicitaçõesdeassinaturas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editaisdepesquisa_projetos_solicita%C3%A7%C3%B5esdeassinaturas/pesquisa/solicitacoes_assinatura_formularios/" title="Solicitações de Assinaturas"> <span>Solicitações de Assinaturas</span></a></li></ul></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Editora"> <span>Editora</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Submissão de Obras"> <span>Submissão de Obras</span></a><ul style="display: block;"><li class="" id="menu-item-pesquisa_editora_submissãodeobras_submeterobra"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_submeterobra/pesquisa/editais_abertos_submissao_obra/" title="Submeter Obra"> <span>Submeter Obra</span></a></li><li class="" id="menu-item-pesquisa_editora_submissãodeobras_minhasobras"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_editora_submiss%C3%A3odeobras_minhasobras/pesquisa/minhas_obras/" title="Minhas Obras"> <span>Minhas Obras</span></a></li></ul></li></ul></li><li class="" id="menu-item-pesquisa_laboratórios"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/pesquisa_laborat%C3%B3rios/admin/pesquisa/laboratoriopesquisa/" title="Laboratórios"> <span>Laboratórios</span></a></li></ul></li><li class="has-child menu-gestao-de-pessoas opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Gestão de Pessoas"><i class="fas fa-gestao-de-pessoas" aria-hidden="true"></i> <span>Gestão de Pessoas</span></a><ul style="display: block;"><li class="" id="menu-item-gestãodepessoas_campi"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/gest%C3%A3odepessoas_campi/admin/rh/unidadeorganizacional/" title="Campi"> <span>Campi</span></a></li></ul></li><li class="has-child menu-tec-da-informacao opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Tec. da Informação"><i class="fas fa-tec-da-informacao" aria-hidden="true"></i> <span>Tec. da Informação</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Notificações"> <span>Notificações</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_notificações_notificações"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_notifica%C3%A7%C3%B5es/comum/notificacoes/" title="Notificações"> <span>Notificações</span></a></li><li class="" id="menu-item-tecdainformação_notificações_preferências"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_notifica%C3%A7%C3%B5es_prefer%C3%AAncias/admin/comum/preferencianotificacao/" title="Preferências"> <span>Preferências</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="E-mail do Usuário"> <span>E-mail do Usuário</span></a><ul style="display: block;"><li class="" id="menu-item-tecdainformação_emaildousuário_meusemails"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/tecdainforma%C3%A7%C3%A3o_emaildousu%C3%A1rio_meusemails/email_usuario/meus_emails/" title="Meus E-mails"> <span>Meus E-mails</span></a></li></ul></li></ul></li><li class="has-child menu-central-de-servicos opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Central de Serviços"><i class="fas fa-central-de-servicos" aria-hidden="true"></i> <span>Central de Serviços</span></a><ul style="display: block;"><li class="" id="menu-item-centraldeserviços_basedeconhecimentos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_basedeconhecimentos/centralservicos/baseconhecimento/" title="Base de Conhecimentos"> <span>Base de Conhecimentos</span></a></li><li class="" id="menu-item-centraldeserviços_abrirchamado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_abrirchamado/centralservicos/listar_area_servico/" title="Abrir Chamado"> <span>Abrir Chamado</span></a></li><li class="" id="menu-item-centraldeserviços_meuschamados"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/centraldeservi%C3%A7os_meuschamados/centralservicos/meus_chamados/?tab=ativos" title="Meus Chamados"> <span>Meus Chamados</span></a></li></ul></li><li class="has-child menu-atividades-estudantis opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Atividades Estudantis"><i class="fas fa-atividades-estudantis" aria-hidden="true"></i> <span>Atividades Estudantis</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Serviço Social"> <span>Serviço Social</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Programas"> <span>Programas</span></a><ul style="display: block;"><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_inscrições"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_inscri%C3%A7%C3%B5es/admin/ae/inscricao/" title="Inscrições"> <span>Inscrições</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_acompanharrecurso"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_acompanharrecurso/admin/ae/recursoatividadesestudantis/" title="Acompanhar Recurso"> <span>Acompanhar Recurso</span></a></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_programas_visualizarresultado"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_programas_visualizarresultado/ae/visualizar_resultado/" title="Visualizar Resultado"> <span>Visualizar Resultado</span></a></li></ul></li><li class="" id="menu-item-atividadesestudantis_serviçosocial_caracterizaçãosocioeconômica"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/atividadesestudantis_servi%C3%A7osocial_caracteriza%C3%A7%C3%A3osocioecon%C3%B4mica/ae/caracterizacao/" title="Caracterização Socioeconômica"> <span>Caracterização Socioeconômica</span></a></li></ul></li></ul></li><li class="has-child menu-comunicacao-social opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicação Social"><i class="fas fa-comunicacao-social" aria-hidden="true"></i> <span>Comunicação Social</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_eventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_eventos/admin/eventos/evento/" title="Eventos"> <span>Eventos</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Relatórios"> <span>Relatórios</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_relatórios_calendáriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_calend%C3%A1riodeeventos/eventos/calendario_eventos/" title="Calendário de Eventos"> <span>Calendário de Eventos</span></a></li><li class="" id="menu-item-comunicaçãosocial_relatórios_relatóriodeeventos"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_relat%C3%B3rios_relat%C3%B3riodeeventos/eventos/relatorio/" title="Relatório de Eventos"> <span>Relatório de Eventos</span></a></li></ul></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comunicador"> <span>Comunicador</span></a><ul style="display: block;"><li class="" id="menu-item-comunicaçãosocial_comunicador_caixademensagens"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/comunica%C3%A7%C3%A3osocial_comunicador_caixademensagens/-/comunicacao/comunicador/mensagens-recebidas/" title="Caixa de Mensagens"> <span>Caixa de Mensagens</span></a></li></ul></li></ul></li><li class="has-child menu-extensao opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Extensão"><i class="fas fa-extensao" aria-hidden="true"></i> <span>Extensão</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Egressos"> <span>Egressos</span></a><ul style="display: block;"><li class="" id="menu-item-extensão_egressos_pesquisasdeegressorespondidas"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/extens%C3%A3o_egressos_pesquisasdeegressorespondidas/egressos/pesquisas_respondidas/" title="Pesquisas de Egresso Respondidas"> <span>Pesquisas de Egresso Respondidas</span></a></li></ul></li></ul></li><li class="has-child menu-des-institucional opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="DES. INSTITUCIONAL"><i class="fas fa-des-institucional" aria-hidden="true"></i> <span>DES. INSTITUCIONAL</span></a><ul style="display: block;"><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Comissões e Reuniões"> <span>Comissões e Reuniões</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_comissões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_comiss%C3%B5es/admin/comissoes_reunioes/comissao/" title="Comissões"> <span>Comissões</span></a></li><li class="" id="menu-item-desinstitucional_comissõesereuniões_reuniões"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_reuni%C3%B5es/admin/comissoes_reunioes/reuniao/" title="Reuniões"> <span>Reuniões</span></a></li><li class="has-child opened"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" title="Assuntos"> <span>Assuntos</span></a><ul style="display: block;"><li class="" id="menu-item-desinstitucional_comissõesereuniões_assuntos_consultapública"><a href="https://suap.ifsp.edu.br/djtools/breadcrumbs_reset/desinstitucional_comiss%C3%B5esereuni%C3%B5es_assuntos_consultap%C3%BAblica/comissoes_reunioes/consultar_assuntos/" title="Consulta Pública"> <span>Consulta Pública</span></a></li></ul></li></ul></li></ul></li>
+                    <li class="menu-logout">
+                      <form action="https://suap.ifsp.edu.br/accounts/logout/" method="post" style="display:inline;">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="AV2jHAsAugY2Mc1h1Sbsm5LgzAM3rSLVtpzlbcAzAk8sFqAJ3xPPiWkyiydKSx3v" style="display: inline-block;">
+                        <button type="submit" title="Sair" class="logout-button">
+                          <span class="fas fa-sign-out-alt" aria-hidden="true"></span> <span>Sair</span>
+                        </button>
+                      </form>
+                    </li>
+                  </ul></nav>
+              
+            
+          
+        </aside>
+      
+
+      
+      
+
+      <main id="content">
+
+        <div id="breadcrumbs">
+          
+        </div>
+
+        
+          <div class="title-container">
+            <h2>Lucas Mauricio Silva de Souza (CB3051064)</h2>
+            <div class="object-status"></div>
+            <div class="action-bar-container"></div>
+          </div>
+        
+
+        
+  <ul class="action-bar">
+
+    
+
+    
+      <li><a href="https://suap.ifsp.edu.br/admin/processo_eletronico/processo/?interessados__id__exact=475630" class="btn success">Visualizar Processos de Interesse</a></li>
+    
+
+    <li class="has-child">
+      <a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" class="primary">Editar</a>
+      <ul>
+        
+        
+          <li><a class="popup" href="https://suap.ifsp.edu.br/edu/atualizar_email_secundario/415462/">E-mail</a>
+          </li>
+        
+        
+        
+          <li><a class="popup" href="https://suap.ifsp.edu.br/edu/atualizar_meus_dados_pessoais/CB3051064/">Dados
+            Pessoais</a></li>
+        
+        
+        
+        
+        
+          <li><a href="https://suap.ifsp.edu.br/edu/aluno/415462/renda-familiar/">Renda Familiar</a></li>
+        
+        
+        
+        
+          <li><a href="https://suap.ifsp.edu.br/ae/caracterizacao/415462/" class="primary">Caracterização</a></li>
+        
+        
+        
+          <li><a href="https://suap.ifsp.edu.br/email_usuario/redefinir_senha_email/lucas.mauricio@aluno.ifsp.edu.br">Redefinir senha do E-mail acadêmico</a></li>
+        
+        
+          <li><a href="https://suap.ifsp.edu.br/edu/redefinir_chave_acesso/415462/">Redefinir chave de acesso</a></li>
+        
+
+      </ul>
+    </li>
+
+    
+      
+    
+
+    
+      
+    
+
+    
+      
+        
+          <li class="has-child">
+            <a class="default" href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#">Documentos</a>
+            <ul>
+              
+                
+                  
+                    <li><a class="default" href="https://suap.ifsp.edu.br/edu/emitir_historico_parcial_pdf/415462/">Histórico Parcial</a></li>
+                  
+                
+                
+                  
+                  
+                    
+                      <li><a class="default" href="https://suap.ifsp.edu.br/edu/atestado_matricula/415462/">Atestado de Matrícula</a></li>
+                    
+                  
+                  <li><a href="https://suap.ifsp.edu.br/edu/comprovante_dados_academicos_pdf/415462">Comprovante de Dados Acadêmicos</a></li>
+                
+                <li><a class="default" href="https://suap.ifsp.edu.br/edu/grade_curricular/2817/">Matriz Curricular</a></li>
+              
+              
+              
+                <li><a class="default" href="https://suap.ifsp.edu.br/edu/emitir_carteirinha_estudantil/415462/">Carteirinha Estudantil</a></li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+      
+    
+    
+    
+
+  </ul>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div class="box ">
+  <h3>Dados Gerais</h3>
+  <div>
+    <div class="table-responsive">
+      <div class="photo-circle big">
+        <img src="./HORARIOS_files/Mgj7d02GoqzDoRq_8cJLz7Cirx87nAGkVtSeDGYCODM(1).jpg" alt="Foto de LUCAS MAURICIO SILVA DE SOUZA">
+      </div>
+      <div>
+        <table class="info">
+          <tbody><tr>
+            <td>Nome</td>
+            <td colspan="3">Lucas Mauricio Silva de Souza</td>
+            <td>Situação</td>
+            <td>
+              
+                
+                  <span class="status status-info">Matriculado</span>
+                
+              
+            </td>
+          </tr>
+          <tr>
+            <td>Matrícula</td>
+            <td colspan="3">CB3051064</td>
+            <td>Ingresso</td>
+            <td>2026/1</td>
+          </tr>
+          <tr>
+            <td>CPF</td>
+            <td colspan="5">
+              545.988.568-07</td>
+          </tr>
+          
+          <tr>
+            <td>Período Referência</td>
+            <td colspan="3">1º</td>
+            <td>I.R.A.</td>
+            <td>3,32</td>
+          </tr>
+          <tr>
+            <td>Curso</td>
+            <td colspan="5">
+              
+              CBT.TCN.ATI.2004V2 - TECNOLOGIA EM AUTOMAÇÃO INDUSTRIAL
+              
+            </td>
+          </tr>
+          <tr>
+            <td>Matriz</td>
+            <td colspan="3">
+              
+              2817 - CBT.TCN.ATI.2023-TECNOLOGIA EM AUTOMAÇÃO INDUSTRIAL
+              
+            </td>
+            <td>Qtd. Períodos</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Situação Sistêmica</td>
+            <td colspan="3">
+              <span class="status status-success">
+                Matriculado no SUAP
+              </span>
+            </td>
+            <td>Data da Migração</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Impressão Digital</td>
+            <td colspan="5"><span class="status status-error">Não</span></td>
+          </tr>
+          
+          
+            <tr>
+              
+                <td>Emitiu Diploma</td>
+                <td colspan="5"><span class="status status-error">Não</span></td>
+              
+            </tr>
+          
+          
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div hx-indicator=".indicator">
+    <ul class="tabs with-content" id="tabsAluno">
+      
+        <li class="">
+          <a data-tab-name="dados_academicos" hx-get="/edu/aluno/CB3051064/dados-academicos/" hx-target="#tab-dados_academicos" hx-trigger="click once">
+            Dados Acadêmicos
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="dados_pessoais" hx-get="/edu/aluno/CB3051064/dados-pessoais/" hx-target="#tab-dados_pessoais" hx-trigger="click once">
+            Dados Pessoais
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="pasta_documental" hx-get="/edu/aluno/CB3051064/pasta-documental/" hx-target="#tab-pasta_documental" hx-trigger="click once">
+            Pasta Documental
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="requisitos" hx-get="/edu/aluno/CB3051064/requisitos-conclusao/" hx-target="#tab-requisitos" hx-trigger="click once">
+            Requisitos de Conclusão
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="pedidos" hx-get="/edu/aluno/CB3051064/pedidos-matricula/" hx-target="#tab-pedidos" hx-trigger="click once">
+            Pedidos de Renovação de Matrícula
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="acc" hx-get="/edu/aluno/CB3051064/atividades-complementares/" hx-target="#tab-acc" hx-trigger="click once">
+            Atividades Complementares
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="extensao" hx-get="/edu/aluno/CB3051064/atividades-extensao/" hx-target="#tab-extensao" hx-trigger="click once">
+            Atividades Curriculares de Extensão
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="convocacoes_enade" hx-get="/edu/aluno/CB3051064/enade/" hx-target="#tab-convocacoes_enade" hx-trigger="click once">
+            ENADE
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="projeto" hx-get="/edu/aluno/CB3051064/projeto-final/" hx-target="#tab-projeto" hx-trigger="click once">
+            TCC / Relatórios
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="medidas_premiacoes" hx-get="/edu/aluno/CB3051064/medidas-premiacao/" hx-target="#tab-medidas_premiacoes" hx-trigger="click once">
+            Medidas Disciplinares / Premiações
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="boletim" hx-get="/edu/aluno/CB3051064/boletins/" hx-target="#tab-boletim" hx-trigger="click once">
+            Boletins
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="historico" hx-get="/edu/aluno/CB3051064/historico/" hx-target="#tab-historico" hx-trigger="click once">
+            Histórico
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="caracterizacao" hx-get="/edu/aluno/CB3051064/caracterizacao/" hx-target="#tab-caracterizacao" hx-trigger="click once">
+            Caracterização Socioeconômica
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="atividades_estudantis" hx-get="/edu/aluno/CB3051064/atividades-estudantis/" hx-target="#tab-atividades_estudantis" hx-trigger="click once">
+            Atividades Estudantis
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="dados_bancarios" hx-get="/edu/aluno/CB3051064/dados-bancarios/" hx-target="#tab-dados_bancarios" hx-trigger="click once">
+            Dados Bancários
+          </a>
+        </li>
+      
+        <li class="active">
+          <a data-tab-name="locais_aula_aluno" hx-get="/edu/aluno/CB3051064/locais-aula/?tab=locais_aula_aluno&amp;ano-periodo=2026.2" hx-target="#tab-locais_aula_aluno" hx-trigger="load">
+            Locais e Horários de Aula / Atividade
+          </a>
+        </li>
+      
+        <li class="">
+          <a data-tab-name="requerimentos" hx-get="/edu/aluno/CB3051064/requerimentos/" hx-target="#tab-requerimentos" hx-trigger="click once">
+            Requerimentos
+          </a>
+        </li>
+      
+    </ul>
+    <div class="htmx-indicator indicator">
+      <img src="./HORARIOS_files/loading.gif"> Carregando...
+    </div>
+    <div id="contentTabsAluno">
+      
+        <div class="tab-container oculto" id="tab-dados_academicos"></div>
+      
+        <div class="tab-container oculto" id="tab-dados_pessoais"></div>
+      
+        <div class="tab-container oculto" id="tab-pasta_documental"></div>
+      
+        <div class="tab-container oculto" id="tab-requisitos"></div>
+      
+        <div class="tab-container oculto" id="tab-pedidos"></div>
+      
+        <div class="tab-container oculto" id="tab-acc"></div>
+      
+        <div class="tab-container oculto" id="tab-extensao"></div>
+      
+        <div class="tab-container oculto" id="tab-convocacoes_enade"></div>
+      
+        <div class="tab-container oculto" id="tab-projeto"></div>
+      
+        <div class="tab-container oculto" id="tab-medidas_premiacoes"></div>
+      
+        <div class="tab-container oculto" id="tab-boletim"></div>
+      
+        <div class="tab-container oculto" id="tab-historico"></div>
+      
+        <div class="tab-container oculto" id="tab-caracterizacao"></div>
+      
+        <div class="tab-container oculto" id="tab-atividades_estudantis"></div>
+      
+        <div class="tab-container oculto" id="tab-dados_bancarios"></div>
+      
+        <div class="tab-container" id="tab-locais_aula_aluno"><div class="search-and-filters"><div class="filter"><form id="form_periodo_letivo"><label>Filtrar por período:</label><select id="select_ano_periodo" name="ano-periodo" onchange="
+                             if( window.location.search.indexOf(&#39;ano-periodo&#39;) !=-1){
+                                 window.location.search = window.location.search.substring(0,window.location.search.indexOf(&#39;ano-periodo&#39;))+&#39;ano-periodo=&#39;+document.getElementById(&#39;select_ano_periodo&#39;).value +  window.location.search.substring(window.location.search.indexOf(&#39;ano-periodo&#39;)+18)
+                             }
+                             else {
+                                 window.location.search = window.location.search + &#39;&amp;ano-periodo=&#39; + document.getElementById(&#39;select_ano_periodo&#39;).value
+                             }"><option selected="">2026.2</option><option>2026.1</option></select></form></div></div>
+
+
+
+  <div class="box">
+  <h3>Horários</h3>
+  <div>
+    
+  
+  
+    <p class="msg info">As disciplinas em vermelho possuem conflitos de horários.</p>
+  
+  
+    
+      <table>
+        <thead>
+          <tr>
+            <th width="10%" class="align-center">Matutino</th>
+            
+              <th class="align-center" width="10%">Segunda</th>
+            
+              <th class="align-center" width="10%">Terça</th>
+            
+              <th class="align-center" width="10%">Quarta</th>
+            
+              <th class="align-center" width="10%">Quinta</th>
+            
+              <th class="align-center" width="10%">Sexta</th>
+            
+              <th class="align-center" width="10%">Sábado</th>
+            
+              <th class="align-center" width="10%">Domingo</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+              <tr>
+                <td class="align-center"><strong>07:15 - 08:00</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>08:00 - 08:45</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>08:45 - 09:30</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>09:45 - 10:30</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>10:30 - 11:15</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>11:15 - 12:00</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+        </tbody>
+      </table>
+    
+  
+    
+      <table>
+        <thead>
+          <tr>
+            <th width="10%" class="align-center">Vespertino</th>
+            
+              <th class="align-center" width="10%">Segunda</th>
+            
+              <th class="align-center" width="10%">Terça</th>
+            
+              <th class="align-center" width="10%">Quarta</th>
+            
+              <th class="align-center" width="10%">Quinta</th>
+            
+              <th class="align-center" width="10%">Sexta</th>
+            
+              <th class="align-center" width="10%">Sábado</th>
+            
+              <th class="align-center" width="10%">Domingo</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+              <tr>
+                <td class="align-center"><strong>13:15 - 14:00</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>14:00 - 14:45</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>14:45 - 15:30</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>15:45 - 16:30</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>16:30 - 17:15</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>17:15 - 18:00</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+        </tbody>
+      </table>
+    
+  
+    
+      <table>
+        <thead>
+          <tr>
+            <th width="10%" class="align-center">Noturno</th>
+            
+              <th class="align-center" width="10%">Segunda</th>
+            
+              <th class="align-center" width="10%">Terça</th>
+            
+              <th class="align-center" width="10%">Quarta</th>
+            
+              <th class="align-center" width="10%">Quinta</th>
+            
+              <th class="align-center" width="10%">Sexta</th>
+            
+              <th class="align-center" width="10%">Sábado</th>
+            
+              <th class="align-center" width="10%">Domingo</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+              <tr>
+                <td class="align-center"><strong>19:00 - 19:45</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="PROGRAMAÇÃO DE COMPUTADORES 2">
+                            
+                              
+                                SUP.16802 (CBTPRC2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="GEOMETRIA ANALÍTICA E VETORES">
+                            
+                              
+                                SUP.16801 (CBTGAVE)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="QUÍMICA EXPERIMENTAL (Turma A)">
+                            
+                              
+                                SUP.16803 (CBTQUIE)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CIÊNCIAS DOS MATERIAIS">
+                            
+                              
+                                SUP.16797 (CBTCMAT)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CÁLCULO DIFERENCIAL E INTEGRAL 2">
+                            
+                              
+                                SUP.16795 (CBTCDI2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>19:45 - 20:30</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="PROGRAMAÇÃO DE COMPUTADORES 2">
+                            
+                              
+                                SUP.16802 (CBTPRC2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="GEOMETRIA ANALÍTICA E VETORES">
+                            
+                              
+                                SUP.16801 (CBTGAVE)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="QUÍMICA EXPERIMENTAL (Turma A)">
+                            
+                              
+                                SUP.16803 (CBTQUIE)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CIÊNCIAS DOS MATERIAIS">
+                            
+                              
+                                SUP.16797 (CBTCMAT)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CÁLCULO DIFERENCIAL E INTEGRAL 2">
+                            
+                              
+                                SUP.16795 (CBTCDI2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>20:30 - 21:15</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="PROGRAMAÇÃO DE COMPUTADORES 2">
+                            
+                              
+                                SUP.16802 (CBTPRC2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="FÍSICA TEÓRICA 2">
+                            
+                              
+                                SUP.16800 (CBTFIS2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="FÍSICA EXPERIMENTAL 2 (Turma A)">
+                            
+                              
+                                SUP.16799 (CBTFIE2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CIÊNCIAS DOS MATERIAIS">
+                            
+                              
+                                SUP.16797 (CBTCMAT)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CÁLCULO DIFERENCIAL E INTEGRAL 2">
+                            
+                              
+                                SUP.16795 (CBTCDI2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>21:30 - 22:15</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CIÊNCIAS DO AMBIENTE">
+                            
+                              
+                                SUP.16796 (CBTCIAM)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="FÍSICA TEÓRICA 2">
+                            
+                              
+                                SUP.16800 (CBTFIS2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="FÍSICA EXPERIMENTAL 2 (Turma A)">
+                            
+                              
+                                SUP.16799 (CBTFIE2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="ELETRICIDADE 1 (Turma A)">
+                            
+                              
+                                SUP.16798 (CBTELT1)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CÁLCULO DIFERENCIAL E INTEGRAL 2">
+                            
+                              
+                                SUP.16795 (CBTCDI2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+            
+              <tr>
+                <td class="align-center"><strong>22:15 - 23:00</strong></td>
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CIÊNCIAS DO AMBIENTE">
+                            
+                              
+                                SUP.16796 (CBTCIAM)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="FÍSICA TEÓRICA 2">
+                            
+                              
+                                SUP.16800 (CBTFIS2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="ELETRICIDADE 1 (Turma A)">
+                            
+                              
+                                SUP.16798 (CBTELT1)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="ELETRICIDADE 1 (Turma A)">
+                            
+                              
+                                SUP.16798 (CBTELT1)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                        
+                          
+                          <span class="hint" data-hint="CÁLCULO DIFERENCIAL E INTEGRAL 2">
+                            
+                              
+                                SUP.16795 (CBTCDI2)
+                              
+                            
+                          </span>
+                          
+                          <br>
+                        
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+                  
+                    <td class="align-center">
+                      
+                    </td>
+                  
+                
+              </tr>
+            
+          
+        </tbody>
+      </table>
+    
+  
+  
+
+  </div>
+</div>
+
+  <div class="box">
+  <h3>Diários</h3>
+  <div>
+    
+  <table>
+    <thead>
+      <tr>
+        <th>Diário</th>
+        <th>Componente</th>
+        <th class="align-center">Local</th>
+        <th class="align-center">Horário</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td>
+            
+            400903
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16796 (CBTCIAM) - CIÊNCIAS DO AMBIENTE - Graduação [28.50 h/38 Aulas] - CIÊNCIAS DO AMBIENTE.</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Flavia Daylane Tavares de Luna</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Segunda 4ª, 5ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400902
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16795 (CBTCDI2) - CÁLCULO DIFERENCIAL E INTEGRAL 2 - Graduação [71.30 h/95 Aulas] - CÁLCULO DIFERENCIAL E INTEGRAL 2.</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Lucas Kenjy Bazaglia Kuroda</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Sexta 1ª, 2ª, 3ª, 4ª, 5ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400906
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16799 (CBTFIE2) - FÍSICA EXPERIMENTAL 2 - Graduação [28.50 h/38 Aulas] - FÍSICA EXPERIMENTAL 2.</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Sergio Arnaud Sampaio</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Quarta 3ª, 4ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400907
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16800 (CBTFIS2) - FÍSICA TEÓRICA 2 - Graduação [42.80 h/57 Aulas] </dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Sergio Arnaud Sampaio</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Terça 3ª, 4ª, 5ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400908
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16801 (CBTGAVE) - GEOMETRIA ANALÍTICA E VETORES - Graduação [28.50 h/38 Aulas] - GEOMETRIA ANALÍTICA E VETORES</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Glauber Renato Colnago</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Terça 1ª, 2ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400910
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16803 (CBTQUIE) - QUÍMICA EXPERIMENTAL - Graduação [28.50 h/38 Aulas] - QUÍMICA EXPERIMENTAL</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Paula Larangeira Garcia Martins</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Quarta 1ª, 2ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400904
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16797 (CBTCMAT) - CIÊNCIAS DOS MATERIAIS - Graduação [42.80 h/57 Aulas] - CIÊNCIAS DOS MATERIAIS.</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Flavia Daylane Tavares de Luna</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Quinta 1ª, 2ª, 3ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400909
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16802 (CBTPRC2) - PROGRAMAÇÃO DE COMPUTADORES 2 - Graduação [42.80 h/57 Aulas] - PROGRAMAÇÃO DE COMPUTADORES 2.</dd>
+              
+                
+                  <dt>Professor:</dt>
+                
+                <dd>
+                  Marco Aurelio Pires Marques</dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Segunda 1ª, 2ª, 3ª aula (Noturno)</td>
+        </tr>
+      
+        <tr>
+          <td>
+            
+            400905
+            
+          </td>
+          <td>
+            <dl>
+              <dt class="sr-only">Componente:</dt>
+              <dd>SUP.16798 (CBTELT1) - ELETRICIDADE 1 - Graduação [42.80 h/57 Aulas] </dd>
+              
+            </dl>
+          </td>
+          <td class="align-center">-</td>
+          <td class="align-center">Quarta 5ª aula (Noturno) / Quinta 4ª, 5ª aula (Noturno)</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+  </div>
+</div>
+
+  <div class="box">
+  <h3>Atividades Extras</h3>
+  <div>
+    
+      <ul class="action-bar">
+        <li>
+          <a class="popup success" href="https://suap.ifsp.edu.br/edu/adicionar_horario_atividade_extra/415462/2026/2/">Adicionar Atividade Extra</a>
+        </li>
+      </ul>
+    
+    
+      <p class="msg alert">Nenhuma atividade extra no período letivo selecionado.</p>
+    
+  </div>
+</div>
+
+
+</div>
+      
+        <div class="tab-container oculto" id="tab-requerimentos"></div>
+      
+    </div>
+  </div>
+
+
+
+        <ul class="action-links hide-sm">
+          <li><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#" id="topodapagina"><span class="fas fa-caret-up" aria-hidden="true"></span> Topo da Página</a></li>
+          <li class="action-print"><a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#"><span class="fas fa-print" aria-hidden="true"></span> Imprimir</a></li>
+          <li><a href="https://suap.ifsp.edu.br/admin/comum/sessioninfo/"><span class="fas fa-sign-in-alt" aria-hidden="true"></span> Sessões</a></li>
+          <li><a href="https://suap.ifsp.edu.br/comum/alterar_contraste/"><span class="fas fa-adjust" aria-hidden="true"></span> Contrastes</a></li>
+          <li><a href="https://suap.ifsp.edu.br/comum/temas/"><span class="fas fa-palette" aria-hidden="true"></span> Temas</a></li>
+          
+          
+          
+        </ul>
+
+
+      </main>
+
+      
+      
+    </div>
+
+    
+      <footer>
+        <div class="float-right">
+          <dl>
+            <dt>Administração</dt>
+            <dd><a href="mailto:suporte@ifsp.edu.br">suporte@ifsp.edu.br</a></dd>
+          </dl>
+          <dl>
+            <dt>Desenvolvimento</dt>
+            <dd><a href="http://portal.ifrn.edu.br/">IFRN</a></dd>
+          </dl>
+          <dl>
+            <dt>Mantido por</dt>
+            <dd><a href="http://www.ifsp.edu.br/">IFSP</a></dd>
+          </dl>
+          <dl>
+            <dt>Servidor</dt>
+            <dd>92bfab491221</dd>
+          </dl>
+          
+            <dl>
+  <dt>Última importação do SIAPE</dt>
+  <dd>22/07/2026</dd>
+</dl>
+
+<dl>
+  <dt>Última atualização do SUAP</dt>
+  <dd>21/07/2026 07:39</dd>
+</dl>
+
+          
+          <dl>
+            <dt hidden="">Desenvolvimento:</dt>
+            <dd><a href="http://www.djangoproject.com/"><img src="./HORARIOS_files/django.gif" alt="Feito com Django"></a></dd>
+          </dl>
+        </div>
+        
+      </footer>
+
+      <a href="https://suap.ifsp.edu.br/edu/aluno/CB3051064/?tab=locais_aula_aluno&amp;ano-periodo=2026.2#0" class="go-to-bottom cd-is-visible cd-fade-out">Ir para Rodapé</a>
+
+      
+      <div class="challenge-backdrop"></div>
+
+    
+
+    <div id="notifications-non-read"></div>
+
+    <script>
+      jQuery(document).ready(function() {
+        open_menu_item("");
+        $(window).on("unload", function () {
+          $('input[type=submit]').removeAttr('disabled');
+        });
+
+        // remove o label padrão do django
+        var labeless = $('input.labeless');
+        labeless.prev().remove();
+        labeless.next().addClass('help_marginless');
+        labeless.next().removeClass('help');
+
+        // adicionar uma cor padrão que indica que os campos estão desabilitados
+        $('input[readonly=true]').css('background-color', '#eee');
+        $('textarea[readonly=true]').css('background-color', '#eee');
+
+
+        // reseta o formulário da página
+        $('#btn_reset_forms').click(function () {
+          $('form').each(function() {
+            this.reset();
+          });
+        });
+      });
+    </script>
+
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          challengeBackdrop = document.querySelector(".challenge-backdrop");
+
+          launchChallengeScreen = () => {
+            challengeBackdrop.dataset.active = "yes";
+            htmx.ajax(
+              'GET',
+              '/comum/session-challenge/?challenge_token=DzLmvoDTsa3dWq_BaGYp_w:CB3051064:b4RHLLlLiwsB6FiF_J08LF9dFkymh305smULKiqiTos',
+              {target:'.challenge-backdrop', swap:'innerHTML'}
+            ).catch(error => {
+              console.log('Failed to load session challenge...', error);
+              challengeBackdrop.dataset.active = "no";
+            });
+          };
+
+          const checkDelayThreshold = 15 * 60 * 1000; // 15 min
+          let lastCheck = new Date();
+          let sessionExpiresAt = new Date(lastCheck.getTime() + checkDelayThreshold); // Fake 15 min pra evitar pool inicial imediato.
+
+          setInterval(() => {
+            if (sessionExpiresAt && lastCheck) {
+              const now = new Date();
+              const lastCheckPastTime = now - lastCheck;
+              if (now < sessionExpiresAt && lastCheckPastTime < checkDelayThreshold) {
+                return;
+              }
+            }
+            fetch("/comum/session-state/")
+              .then(response => {
+              if (response.status === 401) {
+                if (challengeBackdrop.dataset.active === "no") {
+                  launchChallengeScreen()
+                  console.log('Session expired. Displaying challenge authentication form...');
+                }
+              } else {
+                challengeBackdrop.dataset.active = "no";
+                challengeBackdrop.replaceChildren();
+                if (response.status === 200) {
+                  response.json().then(data => {
+                    if (data.expires_at) {
+                      sessionExpiresAt = new Date(data.expires_at);
+                      lastCheck = new Date();
+                    }
+                  })
+                }
+              }
+            })
+              .catch(error => {
+              console.error('Failed to check session state:', error);
+            });
+          }, 10000)
+        })
+      </script>
+    
+
+    
+  
+      <script src="./HORARIOS_files/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous"></script>
+    
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabList = document.querySelectorAll("#tabsAluno > li");
+      const tabContentElements = document.querySelectorAll("#contentTabsAluno > div");
+      const setActive = (event) => {
+        const url = new URL(window.location)
+        url.searchParams.set("tab", event.target.dataset.tabName);
+        window.history.pushState({}, '', url);
+
+        tabList.forEach((el) => { el.classList.remove("active") });
+        tabContentElements.forEach((el) => el.classList.add("oculto"));
+        event.target.parentElement.classList.add("active");
+        document.querySelector(event.target.attributes["hx-target"].nodeValue).classList.remove("oculto");
+      }
+      tabList.forEach((el) => { el.querySelector("a").addEventListener("click", setActive)});
+    });
+    document.addEventListener("htmx:afterSettle", (event) => {
+      // Hack para reconfigurar os links de popups.
+      // Os scripts djtools/tinybox/tinibyx.js configuram os componentes de UI após o carregamento do DOM,
+      // mas não são "aware" a inserção de novos elementos no DOM.
+      replaceAddAnotherLinks();
+      initAll(event.target);
+    })
+  </script>
+
+  
+
+<div><div id="loading-tinybox" style="height: 2036px;"></div>    <div id="loading-tinybox-image" style="height: 593px;"></div>    <div id="loading-tinybox-image-wait" style="height: 1036px;"></div>    <div id="history-cache"></div></div></body></html>
